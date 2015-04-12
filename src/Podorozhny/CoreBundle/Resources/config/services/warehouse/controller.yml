@@ -1,0 +1,6 @@
+services:
+    podorozhny.controller.warehouse_good:
+        class: Podorozhny\CoreBundle\Controller\Warehouse\GoodController
+        parent: podorozhny.controller.abstract
+        arguments:
+            - @podorozhny.manager.warehouse_good

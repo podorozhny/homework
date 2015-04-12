@@ -1,0 +1,33 @@
+Podorozhny\Model\Clients\Client:
+    type: entity
+    table: clients_clients
+    repositoryClass: Podorozhny\Doctrine\Repository\Clients\ClientRepository
+    lifecycleCallbacks:
+        prePersist: [ convertPhone ]
+        preUpdate: [ convertPhone ]
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            column: created_at
+            type: datetime
+        name:
+            type: string
+            length: 100
+            nullable: true
+        phone:
+            type: string
+            length: 10
+            nullable: true
+        email:
+            type: string
+            length: 100
+            nullable: true
+        notes:
+            type: string
+            length: 5000
+            nullable: true

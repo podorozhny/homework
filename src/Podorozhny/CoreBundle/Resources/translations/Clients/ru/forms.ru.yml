@@ -1,0 +1,7 @@
+clients.client:
+    label:
+        name: Имя
+        phone: Телефон
+        email: Электропочта
+        notes: Заметки
+        submit: Сохранить

@@ -1,0 +1,7 @@
+services:
+    podorozhny.manager.finance_transaction:
+        class: Podorozhny\Manager\Finance\TransactionManager
+        arguments:
+            - @podorozhny.entity_manager
+            - @event_dispatcher
+            - Podorozhny\Model\Finance\Transaction

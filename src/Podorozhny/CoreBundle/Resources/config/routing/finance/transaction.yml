@@ -1,0 +1,46 @@
+finance_transaction_list:
+    pattern: /transactions/{page}
+    defaults:
+        _controller: podorozhny.controller.finance_transaction:listAction
+        page: 1
+    requirements:
+        _method: GET
+        page: \d+
+
+finance_transaction_new:
+    pattern: /transaction/new
+    defaults:
+        _controller: podorozhny.controller.finance_transaction:newAction
+    requirements:
+        _method: GET
+
+finance_transaction_create:
+    pattern: /transaction/create
+    defaults:
+        _controller: podorozhny.controller.finance_transaction:createAction
+    requirements:
+        _method: POST
+
+finance_transaction_show:
+    pattern: /transaction/{transaction_id}
+    defaults:
+        _controller: podorozhny.controller.finance_transaction:showAction
+    requirements:
+        _method: GET
+        transaction_id: \d+
+
+finance_transaction_update:
+    pattern: /transaction/{transaction_id}/update
+    defaults:
+        _controller: podorozhny.controller.finance_transaction:updateAction
+    requirements:
+        _method: POST
+        transaction_id: \d+
+
+finance_transaction_delete:
+    pattern: /transaction/{transaction_id}/delete
+    defaults:
+        _controller: podorozhny.controller.finance_transaction:deleteAction
+    requirements:
+        _method: GET
+        transaction_id: \d+

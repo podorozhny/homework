@@ -1,0 +1,5 @@
+backend.login:
+    label:
+        email: Электропочта
+        password: Пароль
+        submit: Войти

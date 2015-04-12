@@ -1,0 +1,8 @@
+services:
+    podorozhny.controller.clients_client:
+        class: Podorozhny\CoreBundle\Controller\Clients\ClientController
+        parent: podorozhny.controller.abstract
+        arguments:
+            - @podorozhny.entity_manager
+            - @knp_paginator
+            - @podorozhny.manager.clients_client

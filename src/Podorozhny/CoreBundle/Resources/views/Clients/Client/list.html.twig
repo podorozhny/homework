@@ -1,0 +1,25 @@
+{% extends 'CoreBundle:Clients:layout.html.twig' %}
+
+{% block title %}Клиенты / {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/clients_client_list.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h2 class="sub-header">Клиенты
+        <small>
+            <a class="btn btn-sm btn-default" href="{{ path('clients_client_new') }}">Добавить</a>
+        </small>
+    </h2>
+    {% if pagination.getTotalItemCount %}
+        {% include 'CoreBundle:Clients/Client:list_content.html.twig' %}
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    {% else %}
+        Нет клиентов
+    {% endif %}
+{% endblock %}

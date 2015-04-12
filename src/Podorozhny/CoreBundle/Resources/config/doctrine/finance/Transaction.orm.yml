@@ -1,0 +1,23 @@
+Podorozhny\Model\Finance\Transaction:
+    type: entity
+    table: finance_transactions
+    repositoryClass: Podorozhny\Doctrine\Repository\Finance\TransactionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            column: created_at
+            type: datetime
+        title:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 5000
+            nullable: true
+        amount:
+            type: integer

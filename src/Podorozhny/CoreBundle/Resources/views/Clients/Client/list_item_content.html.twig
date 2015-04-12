@@ -1,0 +1,15 @@
+<tr>
+    <td>{{ client.id }}</td>
+    <td>
+        <nobr>{{ client.createdAt|dtDateTime }}</nobr>
+    </td>
+    <td>{{ client.name }}</td>
+    <td>{{ client.email }}</td>
+    <td>
+        <nobr>{{ client.phone|phone }}</nobr>
+    </td>
+    <td>
+        <a href="{{ path('clients_client_show', { 'client_id': client.id }) }}" class="btn btn-xs btn-default" title="Редактировать"><i class="fa fa-pencil"></i></a>
+        <button class="btn btn-xs btn-default delete-confirm-popover" title="Удалить" data-delete-url="{{ path('clients_client_delete', { 'client_id': client.id }) }}"><i class="fa fa-times"></i></button>
+    </td>
+</tr>

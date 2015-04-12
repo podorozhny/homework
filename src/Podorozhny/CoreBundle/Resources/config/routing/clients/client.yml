@@ -1,0 +1,46 @@
+clients_client_list:
+    pattern: /clients/{page}
+    defaults:
+        _controller: podorozhny.controller.clients_client:listAction
+        page: 1
+    requirements:
+        _method: GET
+        page: \d+
+
+clients_client_new:
+    pattern: /client/new
+    defaults:
+        _controller: podorozhny.controller.clients_client:newAction
+    requirements:
+        _method: GET
+
+clients_client_create:
+    pattern: /client/create
+    defaults:
+        _controller: podorozhny.controller.clients_client:createAction
+    requirements:
+        _method: POST
+
+clients_client_show:
+    pattern: /client/{client_id}
+    defaults:
+        _controller: podorozhny.controller.clients_client:showAction
+    requirements:
+        _method: GET
+        client_id: \d+
+
+clients_client_update:
+    pattern: /client/{client_id}/update
+    defaults:
+        _controller: podorozhny.controller.clients_client:updateAction
+    requirements:
+        _method: POST
+        client_id: \d+
+
+clients_client_delete:
+    pattern: /client/{client_id}/delete
+    defaults:
+        _controller: podorozhny.controller.clients_client:deleteAction
+    requirements:
+        _method: GET
+        client_id: \d+

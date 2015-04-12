@@ -1,0 +1,7 @@
+services:
+    podorozhny.manager.warehouse_good:
+        class: Podorozhny\Manager\Warehouse\GoodManager
+        arguments:
+            - @podorozhny.entity_manager
+            - @event_dispatcher
+            - Podorozhny\Model\Warehouse\Good

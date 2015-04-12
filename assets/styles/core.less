@@ -1,0 +1,46 @@
+@import 'fonts';
+
+:focus {
+    outline: none !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:   15px;
+    overflow-y:  scroll;
+}
+
+.sf-toolbar {
+    bottom:   0;
+    position: absolute;
+
+    a {
+        border-bottom: 0;
+    }
+}
+
+.form-control {
+    textarea& {
+        resize:     vertical;
+    }
+}
+
+.help-block,
+.error-block {
+    display:    block;
+    font-size:  13px;
+    margin-top: 5px;
+}
+
+.error-block {
+    color: #cc603d;
+}
+
+.help-block {
+    color: #777777;
+}

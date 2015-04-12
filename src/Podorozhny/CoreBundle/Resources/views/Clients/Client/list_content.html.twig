@@ -1,0 +1,19 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Создан</th>
+                <th>Имя</th>
+                <th>Электропочта</th>
+                <th>Телефон</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in pagination %}
+                {% include 'CoreBundle:Clients/Client:list_item_content.html.twig' %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

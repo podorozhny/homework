@@ -1,0 +1,14 @@
+{% extends 'CoreBundle:Clients:layout.html.twig' %}
+
+{% block title %}{{ client.id }} / Клиенты / {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/clients_client_form.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h2 class="sub-header">Клиент #{{ client.id }}</h2>
+    {% include 'CoreBundle:Clients/Client:show_content.html.twig' %}
+{% endblock %}

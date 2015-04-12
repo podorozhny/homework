@@ -1,0 +1,7 @@
+services:
+   podorozhny.form.type.clients_client:
+        class: Podorozhny\CoreBundle\Form\Type\Clients\ClientType
+        arguments:
+            - @podorozhny.manager.clients_client
+        tags:
+            - { name: form.type, alias: clients_client }

@@ -1,0 +1,46 @@
+warehouse_good_list:
+    pattern: /goods/{page}
+    defaults:
+        _controller: podorozhny.controller.warehouse_good:listAction
+        page: 1
+    requirements:
+        _method: GET
+        page: \d+
+
+warehouse_good_new:
+    pattern: /good/new
+    defaults:
+        _controller: podorozhny.controller.warehouse_good:newAction
+    requirements:
+        _method: GET
+
+warehouse_good_create:
+    pattern: /good/create
+    defaults:
+        _controller: podorozhny.controller.warehouse_good:createAction
+    requirements:
+        _method: POST
+
+warehouse_good_show:
+    pattern: /good/{good_id}
+    defaults:
+        _controller: podorozhny.controller.warehouse_good:showAction
+    requirements:
+        _method: GET
+        good_id: \d+
+
+warehouse_good_update:
+    pattern: /good/{good_id}/update
+    defaults:
+        _controller: podorozhny.controller.warehouse_good:updateAction
+    requirements:
+        _method: POST
+        good_id: \d+
+
+warehouse_good_delete:
+    pattern: /good/{good_id}/delete
+    defaults:
+        _controller: podorozhny.controller.warehouse_good:deleteAction
+    requirements:
+        _method: GET
+        good_id: \d+

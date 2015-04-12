@@ -1,0 +1,3 @@
+<form class="form-horizontal form-bordered" action="{{ path('clients_client_update', { 'client_id': client.id }) }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+    {{ form_widget(form) }}
+</form>

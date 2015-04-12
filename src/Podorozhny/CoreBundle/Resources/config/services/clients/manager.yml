@@ -1,0 +1,7 @@
+services:
+    podorozhny.manager.clients_client:
+        class: Podorozhny\Manager\Clients\ClientManager
+        arguments:
+            - @podorozhny.entity_manager
+            - @event_dispatcher
+            - Podorozhny\Model\Clients\Client

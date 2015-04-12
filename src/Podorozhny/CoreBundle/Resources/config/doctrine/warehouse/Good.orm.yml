@@ -1,0 +1,28 @@
+Podorozhny\Model\Warehouse\Good:
+    type: entity
+    table: warehouse_goods
+    repositoryClass: Podorozhny\Doctrine\Repository\Warehouse\GoodRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            column: created_at
+            type: datetime
+        name:
+            type: string
+            length: 100
+        description:
+            type: string
+            length: 5000
+            nullable: true
+        count:
+            type: integer
+        weight:
+            type: integer
+            nullable: true
+        space:
+            type: integer

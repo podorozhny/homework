@@ -1,0 +1,23 @@
+Podorozhny\Model\Clients\Client:
+    properties:
+        name:
+            - Length:
+                min: 2
+                max: 100
+                minMessage: validation.length.min
+                maxMessage: validation.length.max
+        phone:
+            - Length:
+                min: 18
+                max: 18
+                exactMessage: validation.length.exact
+        email:
+            - Length:
+                max: 100
+                maxMessage: validation.length.max
+            - Email:
+                message: validation.email
+        notes:
+            - Length:
+                max: 5000
+                maxMessage: validation.length.max

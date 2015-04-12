@@ -1,0 +1,16 @@
+{% extends 'CoreBundle:Clients:layout.html.twig' %}
+
+{% block title %}Новый клиент / {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/clients_client_form.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h2 class="sub-header">Новый клиент</h2>
+    <form class="form-horizontal form-bordered" action="{{ path('clients_client_create') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+        {{ form_widget(form) }}
+    </form>
+{% endblock %}
