@@ -1,0 +1,13 @@
+#backend_home clone
+backend_home:
+    pattern: /
+    defaults:
+        _controller: podorozhny.controller.backend_page:homeAction
+    requirements:
+        _method: GET
+
+backend_security:
+    resource: @CoreBundle/Resources/config/routing/backend/security.yml
+
+backend_page:
+    resource: @CoreBundle/Resources/config/routing/backend/page.yml

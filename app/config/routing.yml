@@ -1,0 +1,2 @@
+app:
+    resource: @CoreBundle/Resources/config/routing/routing.yml

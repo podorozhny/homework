@@ -1,0 +1,46 @@
+{
+    "build": {
+        "src":  {
+            "css":   {
+                "app":  [
+                    "./bower_components/bootstrap/dist/css/bootstrap.min.css",
+                    "./bower_components/font-awesome/css/font-awesome.min.css",
+                    "./assets/styles/app.less"
+                ],
+                "auth": [
+                    "./bower_components/bootstrap/dist/css/bootstrap.min.css",
+                    "./bower_components/font-awesome/css/font-awesome.min.css",
+                    "./assets/styles/auth.less"
+                ]
+            },
+            "js":    {
+                "app":                 [
+                    "./bower_components/jquery/dist/jquery.min.js",
+                    "./bower_components/bootstrap/dist/js/bootstrap.min.js",
+                    "./assets/scripts/app.js"
+                ],
+                "clients_client_list": [
+                    "./assets/scripts/clients_client_list.js"
+                ],
+                "clients_client_form": [
+                    "./bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js",
+                    "./assets/scripts/clients_client_form.js"
+                ]
+            },
+            "img":   [
+                "assets/images/**/*.png",
+                "assets/images/**/*.jpg",
+                "assets/images/**/*.gif"
+            ],
+            "fonts": [
+                "assets/fonts/*"
+            ]
+        },
+        "dest": {
+            "css":   "web/css",
+            "js":    "web/js",
+            "img":   "web/img",
+            "fonts": "web/fonts"
+        }
+    }
+}

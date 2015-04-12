@@ -1,0 +1,9 @@
+{% extends 'CoreBundle:Exception:layout.html.twig' %}
+
+{% block title %}403 / {{ parent() }}{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h1 class="animation-hatch"><i class="fa fa-times text-danger"></i> 403</h1>
+    <h2 class="h3">Oops, we&nbsp;are sorry but you do&nbsp;not have permission to&nbsp;access this page.</h2>
+{% endblock %}

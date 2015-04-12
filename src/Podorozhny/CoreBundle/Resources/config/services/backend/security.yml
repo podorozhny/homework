@@ -1,0 +1,14 @@
+services:
+    podorozhny.security.backend_user_provider:
+        class: Podorozhny\CoreBundle\Security\Backend\UserProvider
+        public: false
+        arguments:
+            - @podorozhny.manager.backend_user
+
+    podorozhny.security.backend_login_manager:
+        class: Podorozhny\CoreBundle\Security\Backend\LoginManager
+        arguments:
+            - @security.context
+            - @security.user_checker
+            - @security.authentication.session_strategy
+            - @service_container

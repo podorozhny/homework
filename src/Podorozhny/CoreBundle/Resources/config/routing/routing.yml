@@ -1,0 +1,15 @@
+backend:
+    resource: @CoreBundle/Resources/config/routing/backend/routes.yml
+    host: %podorozhny.domain_main%
+
+clients:
+    resource: @CoreBundle/Resources/config/routing/clients/routes.yml
+    host: %podorozhny.domain_main%
+
+finance:
+    resource: @CoreBundle/Resources/config/routing/finance/routes.yml
+    host: %podorozhny.domain_main%
+
+warehouse:
+    resource: @CoreBundle/Resources/config/routing/warehouse/routes.yml
+    host: %podorozhny.domain_main%

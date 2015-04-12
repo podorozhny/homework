@@ -1,0 +1,36 @@
+security:
+    encoders:
+        Podorozhny\Model\Backend\UserInterface:
+            algorithm: sha512
+            iterations: 500
+            encode_as_base64: false
+    providers:
+        backend_user_provider:
+            id: podorozhny.security.backend_user_provider
+    firewalls:
+        backend:
+            host: %podorozhny.domain_main%
+            pattern: ^/
+            form_login:
+                provider: backend_user_provider
+                username_parameter: backend_login[email]
+                password_parameter: backend_login[password]
+                csrf_parameter: backend_login[csrf_token]
+                csrf_provider: form.csrf_provider
+                intention: backend_login
+            logout:
+                path: /logout
+                target: /login
+            anonymous: true
+            remember_me:
+                key: %secret%
+                name: BACKEND_REMEMBER_ME
+                lifetime: 31536000
+                always_remember_me: true
+        dev:
+            pattern: ^/(_(profiler|wdt)|bundles|css|fonts|img|js)/
+            security: false
+    access_control:
+        - { host: %podorozhny.domain_main%, path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { host: %podorozhny.domain_main%, path: ^/advert, role: [ROLE_USER] }
+#        - { host: %podorozhny.domain_main%, path: ^/my-adverts, role: [ROLE_USER] }

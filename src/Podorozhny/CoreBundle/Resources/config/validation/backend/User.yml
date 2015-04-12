@@ -1,0 +1,25 @@
+Podorozhny\Model\Backend\User:
+    properties:
+        email:
+            - NotBlank:
+                message: validation.not_blank
+                groups: [login, registration, profile]
+            - Length:
+                min: 2
+                max: 255
+                minMessage: validation.length.min
+                maxMessage: validation.length.max
+                groups: [login, registration, profile]
+            - Email:
+                message: validation.email
+                groups: [login, registration, profile]
+        plainPassword:
+            - NotBlank:
+                message: validation.not_blank
+                groups: [login, registration, profile, reset_password, change_password]
+            - Length:
+                min: 8
+                max: 4096
+                minMessage: validation.length.min
+                maxMessage: validation.length.max
+                groups: [login, registration, profile, reset_password, change_password]

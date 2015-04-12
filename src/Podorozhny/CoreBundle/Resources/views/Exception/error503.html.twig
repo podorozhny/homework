@@ -1,0 +1,11 @@
+{% extends 'CoreBundle:Exception:layout.html.twig' %}
+
+{% block title %}503 / {{ parent() }}{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h1 class="animation-tossing">
+        <i class="fa fa-bullhorn text-success"></i> 503</h1>
+    <h2 class="h3">Oops, we&nbsp;are sorry but our service is&nbsp;currently not available.<br />Please try again in&nbsp;a&nbsp;minute.
+    </h2>
+{% endblock %}

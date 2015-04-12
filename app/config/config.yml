@@ -1,0 +1,62 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: parameters_base.yml }
+    - { resource: security.yml }
+    - { resource: doctrine.yml }
+    - { resource: twig.yml }
+
+framework:
+    translator:
+        fallback: %podorozhny.locale%
+    secret: %secret%
+    router:
+        resource: %kernel.root_dir%/config/routing.yml
+        strict_requirements: %kernel.debug%
+    form: true
+    csrf_protection: true
+    validation:
+        enable_annotations: false
+    templating:
+        engines: ['twig', 'php']
+    default_locale: %podorozhny.locale%
+    trusted_hosts: ~
+    trusted_proxies: ~
+    session:
+        handler_id: ~
+    fragments: ~
+    http_method_override: true
+
+sensio_framework_extra:
+    router:
+        annotations: false
+    request:
+        converters: true
+    view:
+        annotations: false
+    cache:
+        annotations: false
+
+assetic:
+    debug: %kernel.debug%
+    use_controller: false
+    bundles: [CoreBundle]
+
+knp_menu:
+    providers:
+        builder_alias: false
+        container_aware: true
+    twig:
+        template: CoreBundle::knp_menu.html.twig
+    templating: false
+    default_renderer: twig
+
+knp_paginator:
+    page_range: 5
+    default_options:
+        page_name: page
+        sort_field_name: sort
+        sort_direction_name: direction
+        distinct: true
+    template:
+        pagination: CoreBundle:Pagination:pagination.html.twig
+        sortable: CoreBundle:Pagination:sortable.html.twig

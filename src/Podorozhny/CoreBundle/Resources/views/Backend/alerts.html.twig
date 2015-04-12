@@ -1,0 +1,10 @@
+{% set flashbags = app.session.flashbag.all %}
+{% if flashbags %}
+    {% for label, flashes in flashbags %}
+        {% for flash in flashes %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ flash|raw }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,12 @@
+parameters:
+    podorozhny.database.driver: pdo_mysql
+    podorozhny.database.host: 127.0.0.1
+    podorozhny.database.port: ~
+    podorozhny.database.path: ~
+    podorozhny.database.name: podorozhny_homework
+    podorozhny.database.user: root
+    podorozhny.database.password: root
+
+    podorozhny.domain_main: homework.podorozhny.dev
+
+    secret: ThisIsNotSoSecretChangeIt

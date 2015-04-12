@@ -1,0 +1,6 @@
+backend_page_home:
+    pattern: /
+    defaults:
+        _controller: podorozhny.controller.backend_page:homeAction
+    requirements:
+        _method: GET

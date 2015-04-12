@@ -1,0 +1,27 @@
+services:
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+
+    podorozhny.twig.compress_output_extension:
+        class: Podorozhny\Twig\Extension\CompressOutputExtension
+        tags:
+            - { name: twig.extension }
+
+    podorozhny.twig.datetime_extension:
+        class: Podorozhny\Twig\Extension\DateTimeExtension
+        arguments:
+            - @podorozhny.util.date_time_formatter
+        tags:
+            - { name: twig.extension }
+
+    podorozhny.twig.money_extension:
+        class: Podorozhny\Twig\Extension\MoneyExtension
+        tags:
+            - { name: twig.extension }
+
+    podorozhny.twig.phone_extension:
+        class: Podorozhny\Twig\Extension\PhoneExtension
+        tags:
+            - { name: twig.extension }

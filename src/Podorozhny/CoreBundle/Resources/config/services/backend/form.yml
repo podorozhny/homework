@@ -1,0 +1,5 @@
+services:
+   podorozhny.form.type.backend_login:
+        class: Podorozhny\CoreBundle\Form\Type\Backend\LoginType
+        tags:
+            - { name: form.type, alias: backend_login }

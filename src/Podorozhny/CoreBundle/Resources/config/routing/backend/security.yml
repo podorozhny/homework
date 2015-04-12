@@ -1,0 +1,14 @@
+backend_security_login:
+    pattern: /login
+    defaults:
+        _controller: podorozhny.controller.backend_security:loginAction
+
+backend_security_check:
+    pattern: /login_check
+#    defaults:
+#        _controller: podorozhny.controller.backend_security:loginCheckAction
+    requirements:
+        _method: POST
+
+backend_security_logout:
+    pattern: /logout

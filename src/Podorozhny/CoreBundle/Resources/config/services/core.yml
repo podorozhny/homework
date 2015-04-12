@@ -1,0 +1,27 @@
+services:
+    podorozhny.util.canonicalizer:
+        class: Podorozhny\Util\Canonicalizer
+        public: false
+
+    podorozhny.util.token_generator:
+        class: Podorozhny\Util\TokenGenerator
+        public: false
+        arguments:
+            - @?logger
+
+    podorozhny.util.string_helper:
+        class: Podorozhny\Util\StringHelper
+
+    podorozhny.util.date_time_formatter:
+        class: Podorozhny\Util\DateTimeFormatter
+
+    podorozhny.controller.abstract:
+        class: Podorozhny\CoreBundle\Controller\AbstractController
+        calls:
+            - [setFormFactory, [@?form.factory]]
+            - [setRouter, [@router]]
+            - [setTranslator, [@translator]]
+            - [setSecurityContext, [@?security.context]]
+            - [setTemplating, [@?templating]]
+            - [setSession, [@?session]]
+            - [setRequestStack, [@?request_stack]]

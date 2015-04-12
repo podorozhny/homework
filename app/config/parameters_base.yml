@@ -1,0 +1,8 @@
+parameters:
+    podorozhny.locale: ru
+    podorozhny.locales: en|ru
+    podorozhny.locale_names:
+        - { short:  en , name:  English  }
+        - { short:  ru , name:  Русский  }
+
+    podorozhny.company_name: ОАО «Газпром нефть»

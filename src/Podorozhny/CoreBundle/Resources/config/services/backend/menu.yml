@@ -1,0 +1,27 @@
+services:
+    podorozhny.menu.builder.backend:
+        class: Podorozhny\CoreBundle\Menu\BackendMenuBuilder
+        arguments:
+            - @knp_menu.factory
+            - @security.context
+            - @request_stack
+
+    podorozhny.menu.backend_main:
+        class: Knp\Menu\MenuItem
+        factory_service: podorozhny.menu.builder.backend
+        factory_method: createMainMenu
+        arguments:
+            - @request
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: backend_main }
+
+    podorozhny.menu.backend_sidebar:
+        class: Knp\Menu\MenuItem
+        factory_service: podorozhny.menu.builder.backend
+        factory_method: createSidebarMenu
+        arguments:
+            - @request
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: backend_sidebar }

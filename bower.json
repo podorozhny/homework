@@ -1,0 +1,14 @@
+{
+    "name":         "podorozhny/homework",
+    "homepage":     "https://github.com/podorozhny/homework",
+    "authors":      [
+        "Ivan Podorozhny <ivan@podorozhny.ru>"
+    ],
+    "private":      true,
+    "dependencies": {
+        "bootstrap":        "3.3.4",
+        "font-awesome":     "4.3.0",
+        "jquery":           "1.11.2",
+        "jquery.inputmask": "3.1.62"
+    }
+}

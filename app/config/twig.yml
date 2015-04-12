@@ -1,0 +1,12 @@
+parameters:
+    twig.controller.exception.class: Podorozhny\CoreBundle\Controller\ExceptionController
+
+twig:
+    form_themes:
+        -  CoreBundle:Form:layout_horizontal.html.twig
+    debug: %kernel.debug%
+    strict_variables: %kernel.debug%
+    globals:
+        podorozhny_domain_main: %podorozhny.domain_main%
+
+        podorozhny_company_name: %podorozhny.company_name%

@@ -1,0 +1,45 @@
+Podorozhny\Model\Backend\UserGroup:
+    type: entity
+    table: backend_user_groups
+    repositoryClass: Podorozhny\Doctrine\Repository\Backend\UserGroupRepository
+    manyToMany:
+        users:
+            targetEntity: Podorozhny\Model\Backend\User
+            mappedBy: groups
+            joinTable:
+                name: backend_user_usergroup_relations
+                joinColumns:
+                    group_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    user_id:
+                        referencedColumnName: id
+            orderBy:
+                createdAt: ASC
+        roles:
+            targetEntity: Podorozhny\Model\Backend\Role
+            inversedBy: groups
+            joinTable:
+                name: backend_usergroup_role_relations
+                joinColumns:
+                    group_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    role_id:
+                        referencedColumnName: id
+            orderBy:
+                name: ASC
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            column: created_at
+            type: datetime
+        name:
+            type: string
+            length: 255
+            unique: true

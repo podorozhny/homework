@@ -1,0 +1,11 @@
+parameters:
+    podorozhny.security.backend_firewall_name: backend
+
+services:
+    podorozhny.listener.backend.user:
+        class: Podorozhny\Doctrine\EventListener\Backend\UserListener
+        public: false
+        arguments:
+            - @service_container
+        tags:
+            - { name: doctrine.event_subscriber }

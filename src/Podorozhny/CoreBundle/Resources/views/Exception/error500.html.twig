@@ -1,0 +1,10 @@
+{% extends 'CoreBundle:Exception:layout.html.twig' %}
+
+{% block title %}500 / {{ parent() }}{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h1><i class="fa fa-cog fa-spin text-danger"></i> 500</h1>
+    <h2 class="h3">Oops, we&nbsp;are sorry but our server encountered an&nbsp;internal error.<br />But do&nbsp;not worry, we&nbsp;are on&nbsp;it.
+    </h2>
+{% endblock %}

@@ -1,0 +1,11 @@
+parameters:
+    podorozhny.model_manager_name: ~
+
+services:
+    podorozhny.entity_manager:
+        class: Doctrine\ORM\EntityManager
+        public: false
+        factory_method: getManager
+        factory_service: doctrine
+        arguments:
+            - %podorozhny.model_manager_name%

@@ -1,0 +1,23 @@
+services:
+    podorozhny.manager.backend_user:
+        class: Podorozhny\Manager\Backend\UserManager
+        arguments:
+            - @podorozhny.entity_manager
+            - @event_dispatcher
+            - Podorozhny\Model\Backend\User
+            - @security.encoder_factory
+            - @podorozhny.util.canonicalizer
+
+    podorozhny.manager.backend_usergroup:
+        class: Podorozhny\Manager\Backend\UserGroupManager
+        arguments:
+            - @podorozhny.entity_manager
+            - @event_dispatcher
+            - Podorozhny\Model\Backend\UserGroup
+
+    podorozhny.manager.backend_role:
+        class: Podorozhny\Manager\Backend\RoleManager
+        arguments:
+            - @podorozhny.entity_manager
+            - @event_dispatcher
+            - Podorozhny\Model\Backend\Role

@@ -1,0 +1,39 @@
+doctrine:
+    dbal:
+        driver: %podorozhny.database.driver%
+        host: %podorozhny.database.host%
+        port: %podorozhny.database.port%
+        dbname: %podorozhny.database.name%
+        user: %podorozhny.database.user%
+        password: %podorozhny.database.password%
+        charset: UTF8
+        logging: %kernel.debug%
+        profiling: %kernel.debug%
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        auto_mapping: true
+        mappings:
+            backend:
+                type: yml
+                dir: %kernel.root_dir%/../src/Podorozhny/CoreBundle/Resources/config/doctrine/backend
+                prefix: Podorozhny\Model\Backend
+                alias: Backend
+                is_bundle: false
+            clients:
+                type: yml
+                dir: %kernel.root_dir%/../src/Podorozhny/CoreBundle/Resources/config/doctrine/clients
+                prefix: Podorozhny\Model\Clients
+                alias: Clients
+                is_bundle: false
+            finance:
+                type: yml
+                dir: %kernel.root_dir%/../src/Podorozhny/CoreBundle/Resources/config/doctrine/finance
+                prefix: Podorozhny\Model\Finance
+                alias: Finance
+                is_bundle: false
+            warehouse:
+                type: yml
+                dir: %kernel.root_dir%/../src/Podorozhny/CoreBundle/Resources/config/doctrine/warehouse
+                prefix: Podorozhny\Model\Warehouse
+                alias: Warehouse
+                is_bundle: false

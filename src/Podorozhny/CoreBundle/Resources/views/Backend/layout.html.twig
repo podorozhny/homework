@@ -1,0 +1,55 @@
+{% extends 'CoreBundle::base.html.twig' %}
+
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic&subset=latin,cyrillic" />
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="{{ asset('js/app.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+                <a class="navbar-brand" href="{{ path('backend_home') }}">
+                    <i class="fa fa-database fa-fw"></i> {% autoescape false %}{{ podorozhny_company_name }}{% endautoescape %}
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                {{ knp_menu_render('backend_main', { 'currentClass': 'active' }) }}
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                {{ knp_menu_render('backend_sidebar', { 'currentClass': 'active' }) }}
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                {% block content %}
+                    {% include 'CoreBundle:Backend:alerts.html.twig' %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
