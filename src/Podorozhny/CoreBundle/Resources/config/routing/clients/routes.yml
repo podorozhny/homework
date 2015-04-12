@@ -1,3 +1,2 @@
 clients_client:
     resource: @CoreBundle/Resources/config/routing/clients/client.yml
-#    prefix: /clients

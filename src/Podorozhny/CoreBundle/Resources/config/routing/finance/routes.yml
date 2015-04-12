@@ -1,3 +1,2 @@
 finance_transaction:
     resource: @CoreBundle/Resources/config/routing/finance/transaction.yml
-    prefix: /transaction

@@ -1,3 +1,2 @@
 warehouse_good:
     resource: @CoreBundle/Resources/config/routing/warehouse/good.yml
-    prefix: /warehouse
