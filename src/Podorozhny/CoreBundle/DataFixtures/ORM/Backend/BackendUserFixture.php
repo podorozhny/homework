@@ -11,33 +11,17 @@ class BackendUserFixture
 	public function load(ObjectManager $manager)
 	{
 		$this->createUser(
-			$this->getTimeStamps(1, -4000000, -3750000),
+			$this->getTimeStamps(1, -16156800, -15552000),
 			'miller@homework.podorozhny.ru',
 			'doshiraklapshichka',
 			'Совет директоров',
 			'Миллер Алексей Борисович'
 		);
 
-		$this->createUser(
-			$this->getTimeStamps(1, -3750000, -3500000),
-			'ivan@podorozhny.ru',
-			'12Ch0Ac948',
-			'Совет директоров',
-			'Иван Вадимович Подорожный'
-		);
-
-		$count = $this->faker->numberBetween(40, 50);
+		$count = $this->faker->numberBetween(80, 100);
 		
-		$timestamps = $this->getTimeStamps($count, -3500000, 0);
-		$emails     = [];
-
-		while (count($emails) < $count) {
-			$email = $this->faker->email;
-
-			if (false === array_search($email, $emails)) {
-				$emails[] = $email;
-			}
-		}
+		$timestamps = $this->getTimeStamps($count, -15552000, 0);
+		$emails     = $this->getEmails($count);
 
 		for (
 			$i = 0; $i < $count; $i++
@@ -81,6 +65,21 @@ class BackendUserFixture
 				)
 				->setName($name);
 		$userManager->update($user);
+	}
+
+	protected function getEmails($count)
+	{
+		$emails = [];
+
+		while (count($emails) < $count) {
+			$email = $this->faker->email;
+
+			if (array_search($email, $emails) === false) {
+				$emails[] = $email;
+			}
+		}
+
+		return $emails;
 	}
 
 	public function getOrder()

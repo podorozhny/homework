@@ -10,9 +10,9 @@ class FinanceTransactionFixture
 {
 	public function load(ObjectManager $manager)
 	{
-		$count = $this->faker->numberBetween(150, 200);
+		$count = $this->faker->numberBetween(400, 500);
 
-		$timestamps = $this->getTimeStamps($count, -3500000, 0);
+		$timestamps = $this->getTimeStamps($count, -15552000, 0);
 
 		for ($i = 0; $i < $count; $i++) {
 			$amount =
@@ -20,7 +20,7 @@ class FinanceTransactionFixture
 					$this->faker->numberBetween(1, 500) * 100
 					: $this->faker->numberBetween(50, 500) * 1000;
 
-			if ($this->faker->boolean(50)) {
+			if ($this->faker->boolean(20)) {
 				$amount = -$amount;
 			}
 

@@ -19,9 +19,9 @@
                     "./bower_components/bootstrap/dist/js/bootstrap.min.js",
                     "./assets/scripts/app.js"
                 ],
-                "graph":                    [
+                "charts":                    [
                     "./bower_components/Chart.js/Chart.min.js",
-                    "./assets/scripts/graph.js"
+                    "./assets/scripts/charts.js"
                 ],
                 "list_delete_popover":      [
                     "./assets/scripts/list-delete-popover.js"

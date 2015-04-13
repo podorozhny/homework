@@ -8,6 +8,8 @@ services:
     podorozhny.controller.backend_page:
         class: Podorozhny\CoreBundle\Controller\Backend\PageController
         parent: podorozhny.controller.abstract
+        arguments:
+            - @podorozhny.util.charts_provider
 
     podorozhny.controller.backend_user:
         class: Podorozhny\CoreBundle\Controller\Backend\UserController

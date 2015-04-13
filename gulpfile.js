@@ -67,11 +67,11 @@ gulp.task('js-app', function () {
         .pipe(gulp.dest(config.build.dest.js));
 });
 
-gulp.task('js-graph', function () {
-    return gulp.src(config.build.src.js.graph)
+gulp.task('js-charts', function () {
+    return gulp.src(config.build.src.js.charts)
         .pipe(uglify())
         .pipe(wrapper({header: '\n// ${filename}\n\n'}))
-        .pipe(concat('graph.js'))
+        .pipe(concat('charts.js'))
         .pipe(gulp.dest(config.build.dest.js));
 });
 
@@ -107,7 +107,7 @@ gulp.task('js-warehouse-good-form', function () {
         .pipe(gulp.dest(config.build.dest.js));
 });
 
-gulp.task('js', ['js-app', 'js-graph', 'js-list-delete-popover', 'js-clients-client-form', 'js-finance-transaction-form', 'js-warehouse-good-form']);
+gulp.task('js', ['js-app', 'js-charts', 'js-list-delete-popover', 'js-clients-client-form', 'js-finance-transaction-form', 'js-warehouse-good-form']);
 
 gulp.task('images', function () {
     return gulp.src(config.build.src.img)

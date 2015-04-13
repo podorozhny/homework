@@ -10,9 +10,9 @@ class ClientsClientFixture
 {
 	public function load(ObjectManager $manager)
 	{
-		$count = $this->faker->numberBetween(150, 200);
+		$count = $this->faker->numberBetween(250, 300);
 
-		$timestamps = $this->getTimeStamps($count, -3500000, 0);
+		$timestamps = $this->getTimeStamps($count, -15552000, 0);
 		$emails     = $this->getEmails($count);
 		$phones     = $this->getPhones($count);
 

@@ -15,6 +15,9 @@ services:
     podorozhny.util.date_time_formatter:
         class: Podorozhny\Util\DateTimeFormatter
 
+    podorozhny.util.charts_provider:
+        class: Podorozhny\Util\ChartsProvider
+
     podorozhny.controller.abstract:
         class: Podorozhny\CoreBundle\Controller\AbstractController
         calls:

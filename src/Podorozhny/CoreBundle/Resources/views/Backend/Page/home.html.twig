@@ -4,28 +4,39 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('js/graph.js') }}"></script>
+    <script src="{{ asset('js/charts.js') }}"></script>
 {% endblock %}
 
 {% block content %}
     {{ parent() }}
+    <script>
+        var chartsData = {% autoescape false %}{{ chartsData }}{% endautoescape %};
+    </script>
     <h1 class="page-header">Добро пожаловать</h1>
-    <div class="row">
+    <div class="row charts">
         <div class="col-md-6">
-            <h2 class="sub-header">Клиенты</h2>
-            <canvas id="canvas-clients"></canvas>
+            <h3>Количество клиентов</h3>
+            <canvas id="canvas-clients-count"></canvas>
         </div>
         <div class="col-md-6">
-            <h2 class="sub-header">Транзакции</h2>
+            <h3>Приток клиентов</h3>
+            <canvas id="canvas-clients-inflow"></canvas>
+        </div>
+        <div class="col-md-6">
+            <h3>Количество сотрудников</h3>
+            <canvas id="canvas-users"></canvas>
+        </div>
+        <div class="col-md-6">
+            <h3>Оборот</h3>
             <canvas id="canvas-transactions"></canvas>
         </div>
         <div class="col-md-6">
-            <h2 class="sub-header">Товары на складе</h2>
-            <canvas id="canvas-goods"></canvas>
+            <h3>Средний вес товаров</h3>
+            <canvas id="canvas-goods-weight"></canvas>
         </div>
         <div class="col-md-6">
-            <h2 class="sub-header">Сотрудники</h2>
-            <canvas id="canvas-users"></canvas>
+            <h3>Средний объем товаров</h3>
+            <canvas id="canvas-goods-space"></canvas>
         </div>
     </div>
 {% endblock %}

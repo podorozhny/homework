@@ -10,9 +10,9 @@ class WarehouseGoodFixture
 {
 	public function load(ObjectManager $manager)
 	{
-		$count = $this->faker->numberBetween(50, 80);
+		$count = $this->faker->numberBetween(400, 500);
 
-		$timestamps = $this->getTimeStamps($count, -3500000, 0);
+		$timestamps = $this->getTimeStamps($count, -15552000, 0);
 
 		for ($i = 0; $i < $count; $i++) {
 			$this->createGood(
