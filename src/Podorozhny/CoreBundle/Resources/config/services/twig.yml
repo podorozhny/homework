@@ -25,3 +25,13 @@ services:
         class: Podorozhny\Twig\Extension\PhoneExtension
         tags:
             - { name: twig.extension }
+
+    podorozhny.twig.weight_extension:
+        class: Podorozhny\Twig\Extension\WeightExtension
+        tags:
+            - { name: twig.extension }
+
+    podorozhny.twig.size_extension:
+        class: Podorozhny\Twig\Extension\SizeExtension
+        tags:
+            - { name: twig.extension }

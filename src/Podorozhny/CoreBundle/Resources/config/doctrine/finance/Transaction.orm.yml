@@ -8,6 +8,8 @@ Podorozhny\Model\Finance\Transaction:
             id: true
             generator:
                 strategy: AUTO
+            options:
+                unsigned: true
     fields:
         createdAt:
             column: created_at

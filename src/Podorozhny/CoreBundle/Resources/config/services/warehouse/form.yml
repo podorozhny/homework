@@ -1,0 +1,7 @@
+services:
+   podorozhny.form.type.warehouse_good:
+        class: Podorozhny\CoreBundle\Form\Type\Warehouse\GoodType
+        arguments:
+            - @podorozhny.manager.warehouse_good
+        tags:
+            - { name: form.type, alias: warehouse_good }

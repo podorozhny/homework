@@ -1,0 +1,14 @@
+{% extends 'CoreBundle:Warehouse:layout.html.twig' %}
+
+{% block title %}Товар #{{ good.id }} / {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/warehouse-good-form.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h2 class="sub-header">Товар #{{ good.id }}</h2>
+    {% include 'CoreBundle:Warehouse/Good:show_content.html.twig' %}
+{% endblock %}

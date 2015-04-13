@@ -8,6 +8,8 @@ Podorozhny\Model\Warehouse\Good:
             id: true
             generator:
                 strategy: AUTO
+            options:
+                unsigned: true
     fields:
         createdAt:
             column: created_at
@@ -21,8 +23,21 @@ Podorozhny\Model\Warehouse\Good:
             nullable: true
         count:
             type: integer
+            options:
+                unsigned: true
+        width:
+            type: integer
+            options:
+                unsigned: true
+        height:
+            type: integer
+            options:
+                unsigned: true
+        depth:
+            type: integer
+            options:
+                unsigned: true
         weight:
             type: integer
-            nullable: true
-        space:
-            type: integer
+            options:
+                unsigned: true

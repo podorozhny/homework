@@ -35,6 +35,8 @@ Podorozhny\Model\Backend\UserGroup:
             id: true
             generator:
                 strategy: AUTO
+            options:
+                unsigned: true
     fields:
         createdAt:
             column: created_at

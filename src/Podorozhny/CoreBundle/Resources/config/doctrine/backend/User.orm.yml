@@ -22,6 +22,8 @@ Podorozhny\Model\Backend\User:
             id: true
             generator:
                 strategy: AUTO
+            options:
+                unsigned: true
     fields:
         createdAt:
             column: created_at

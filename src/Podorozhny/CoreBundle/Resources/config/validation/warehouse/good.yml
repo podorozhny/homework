@@ -1,0 +1,44 @@
+Podorozhny\Model\Warehouse\Good:
+    properties:
+        name:
+            - NotBlank:
+                message: validation.not_blank
+            - Length:
+                min: 2
+                max: 100
+                minMessage: validation.length.min
+                maxMessage: validation.length.max
+        description:
+            - Length:
+                max: 5000
+                maxMessage: validation.length.max
+        count:
+            - Range:
+                min: 0
+                max: 1000000
+                minMessage: validation.range.min
+                maxMessage: validation.range.max
+        width:
+            - Range:
+                min: 0
+                max: 10000
+                minMessage: validation.range.min
+                maxMessage: validation.range.max
+        height:
+            - Range:
+                min: 0
+                max: 10000
+                minMessage: validation.range.min
+                maxMessage: validation.range.max
+        depth:
+            - Range:
+                min: 0
+                max: 10000
+                minMessage: validation.range.min
+                maxMessage: validation.range.max
+        weight:
+            - Range:
+                min: 0
+                max: 10000
+                minMessage: validation.range.min
+                maxMessage: validation.range.max

@@ -8,5 +8,4 @@ twig:
     strict_variables: %kernel.debug%
     globals:
         podorozhny_domain_main: %podorozhny.domain_main%
-
         podorozhny_company_name: %podorozhny.company_name%

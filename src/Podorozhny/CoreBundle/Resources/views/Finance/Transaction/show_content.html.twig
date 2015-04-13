@@ -1,0 +1,3 @@
+<form class="form-horizontal form-bordered" action="{{ path('finance_transaction_update', { 'transaction_id': transaction.id }) }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+    {{ form_widget(form) }}
+</form>

@@ -1,0 +1,14 @@
+<tr>
+    <td>{{ transaction.id }}</td>
+    <td>
+        <nobr>{{ transaction.createdAt|dtDateTime }}</nobr>
+    </td>
+    <td>{{ transaction.title }}</td>
+    <td>
+        <nobr>{{ transaction.amount|money_rub }}</nobr>
+    </td>
+    <td>
+        <a href="{{ path('finance_transaction_show', { 'transaction_id': transaction.id }) }}" class="btn btn-xs btn-default" title="Редактировать"><i class="fa fa-pencil"></i></a>
+        <button class="btn btn-xs btn-default delete-confirm-popover" title="Удалить" data-delete-url="{{ path('finance_transaction_delete', { 'transaction_id': transaction.id }) }}"><i class="fa fa-times"></i></button>
+    </td>
+</tr>

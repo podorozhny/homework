@@ -10,15 +10,19 @@ class Good
 	protected $name;
 	protected $description;
 	protected $count;
+	protected $width;
+	protected $height;
+	protected $depth;
 	protected $weight;
-	protected $space;
 
 	public function __construct()
 	{
 		$this->createdAt = new \DateTime();
 		$this->count     = 0;
+		$this->width     = 0;
+		$this->height    = 0;
+		$this->depth     = 0;
 		$this->weight    = 0;
-		$this->space     = 0;
 	}
 
 	public function __toString()
@@ -93,6 +97,42 @@ class Good
 		return $this->count;
 	}
 
+	public function setWidth($width)
+	{
+		$this->width = (int) $width;
+
+		return $this;
+	}
+
+	public function getWidth()
+	{
+		return $this->width;
+	}
+
+	public function setHeight($height)
+	{
+		$this->height = (int) $height;
+
+		return $this;
+	}
+
+	public function getHeight()
+	{
+		return $this->height;
+	}
+
+	public function setDepth($depth)
+	{
+		$this->depth = (int) $depth;
+
+		return $this;
+	}
+
+	public function getDepth()
+	{
+		return $this->depth;
+	}
+
 	public function setWeight($weight)
 	{
 		$this->weight = (int) $weight;
@@ -103,17 +143,5 @@ class Good
 	public function getWeight()
 	{
 		return $this->weight;
-	}
-
-	public function setSpace($space)
-	{
-		$this->space = (int) $space;
-
-		return $this;
-	}
-
-	public function getSpace()
-	{
-		return $this->space;
 	}
 }

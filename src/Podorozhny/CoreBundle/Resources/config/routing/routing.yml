@@ -5,7 +5,7 @@ backend:
 clients:
     resource: @CoreBundle/Resources/config/routing/clients/routes.yml
     host: %podorozhny.domain_main%
-#    prefix: /clients
+    prefix: /clients
 
 finance:
     resource: @CoreBundle/Resources/config/routing/finance/routes.yml

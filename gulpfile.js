@@ -67,11 +67,11 @@ gulp.task('js-app', function () {
         .pipe(gulp.dest(config.build.dest.js));
 });
 
-gulp.task('js-clients-client-list', function () {
-    return gulp.src(config.build.src.js.clients_client_list)
+gulp.task('js-list-delete-popover', function () {
+    return gulp.src(config.build.src.js.list_delete_popover)
         .pipe(uglify())
         .pipe(wrapper({header: '\n// ${filename}\n\n'}))
-        .pipe(concat('clients_client_list.js'))
+        .pipe(concat('list-delete-popover.js'))
         .pipe(gulp.dest(config.build.dest.js));
 });
 
@@ -79,11 +79,27 @@ gulp.task('js-clients-client-form', function () {
     return gulp.src(config.build.src.js.clients_client_form)
         .pipe(uglify())
         .pipe(wrapper({header: '\n// ${filename}\n\n'}))
-        .pipe(concat('clients_client_form.js'))
+        .pipe(concat('clients-client-form.js'))
         .pipe(gulp.dest(config.build.dest.js));
 });
 
-gulp.task('js', ['js-app', 'js-clients-client-list', 'js-clients-client-form']);
+gulp.task('js-finance-transaction-form', function () {
+    return gulp.src(config.build.src.js.finance_transaction_form)
+        .pipe(uglify())
+        .pipe(wrapper({header: '\n// ${filename}\n\n'}))
+        .pipe(concat('finance-transaction-form.js'))
+        .pipe(gulp.dest(config.build.dest.js));
+});
+
+gulp.task('js-warehouse-good-form', function () {
+    return gulp.src(config.build.src.js.warehouse_good_form)
+        .pipe(uglify())
+        .pipe(wrapper({header: '\n// ${filename}\n\n'}))
+        .pipe(concat('warehouse-good-form.js'))
+        .pipe(gulp.dest(config.build.dest.js));
+});
+
+gulp.task('js', ['js-app', 'js-list-delete-popover', 'js-clients-client-form', 'js-finance-transaction-form', 'js-warehouse-good-form']);
 
 gulp.task('images', function () {
     return gulp.src(config.build.src.img)

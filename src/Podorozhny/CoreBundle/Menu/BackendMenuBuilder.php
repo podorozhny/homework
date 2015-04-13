@@ -81,7 +81,7 @@ class BackendMenuBuilder
 		);
 
 		$menu->addChild(
-			'Клиенты',
+			'Клиентский отдел',
 			[
 				'route'      => 'clients_client_list',
 				'attributes' => ['divider_prepend' => true]
@@ -90,7 +90,7 @@ class BackendMenuBuilder
 			->setCurrent($this->isCurrent(['clients_client_']));
 
 		$menu->addChild(
-			'Финансы',
+			'Финансовый отдел',
 			[
 				'route'      => 'finance_transaction_list',
 				'attributes' => ['divider_prepend' => true]
@@ -99,7 +99,7 @@ class BackendMenuBuilder
 			->setCurrent($this->isCurrent(['finance_transaction_']));
 
 		$menu->addChild(
-			'Склад',
+			'Складской отдел',
 			[
 				'route'      => 'warehouse_good_list',
 				'attributes' => ['divider_prepend' => true]

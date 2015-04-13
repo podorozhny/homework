@@ -1,0 +1,14 @@
+{% extends 'CoreBundle:Finance:layout.html.twig' %}
+
+{% block title %}Транзакция #{{ transaction.id }} / {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/finance-transaction-form.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h2 class="sub-header">Транзакция #{{ transaction.id }}</h2>
+    {% include 'CoreBundle:Finance/Transaction:show_content.html.twig' %}
+{% endblock %}

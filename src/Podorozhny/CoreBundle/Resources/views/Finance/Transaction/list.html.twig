@@ -1,0 +1,26 @@
+{% extends 'CoreBundle:Finance:layout.html.twig' %}
+
+{% block title %}Транзакции / {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/list-delete-popover.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h2 class="sub-header">
+        Транзакции
+        <small>
+            <a class="btn btn-sm btn-default" href="{{ path('finance_transaction_new') }}">Добавить</a>
+        </small>
+    </h2>
+    {% if pagination.getTotalItemCount %}
+        {% include 'CoreBundle:Finance/Transaction:list_content.html.twig' %}
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    {% else %}
+        Нет транзакций
+    {% endif %}
+{% endblock %}

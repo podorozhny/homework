@@ -1,0 +1,16 @@
+{% extends 'CoreBundle:Warehouse:layout.html.twig' %}
+
+{% block title %}Новый товар / {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/warehouse-good-form.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h2 class="sub-header">Новый товар</h2>
+    <form class="form-horizontal form-bordered" action="{{ path('warehouse_good_create') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+        {{ form_widget(form) }}
+    </form>
+{% endblock %}

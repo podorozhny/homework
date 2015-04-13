@@ -1,0 +1,20 @@
+Podorozhny\Model\Finance\Transaction:
+    properties:
+        title:
+            - NotBlank:
+                message: validation.not_blank
+            - Length:
+                min: 2
+                max: 255
+                minMessage: validation.length.min
+                maxMessage: validation.length.max
+        description:
+            - Length:
+                max: 5000
+                maxMessage: validation.length.max
+        amount:
+            - Range:
+                min: -10000000
+                max: 10000000
+                minMessage: validation.range.min
+                maxMessage: validation.range.max

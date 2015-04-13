@@ -21,7 +21,10 @@ class WarehouseGoodFixture
 				$this->faker->boolean(30) ? $this->faker->realText(
 					$this->faker->numberBetween(32, 4096)
 				) : null,
-				$this->faker->numberBetween(0, 50),
+				$this->faker->numberBetween(0, 100),
+				$this->faker->numberBetween(1, 99) * 10,
+				$this->faker->numberBetween(1, 99) * 10,
+				$this->faker->numberBetween(1, 99) * 10,
 				$this->faker->boolean(80) ?
 					$this->faker->numberBetween(1, 99) * 10
 					: $this->faker->numberBetween(10, 150) * 100
@@ -34,6 +37,9 @@ class WarehouseGoodFixture
 		$name,
 		$description,
 		$amount,
+		$width,
+		$height,
+		$depth,
 		$weight
 	) {
 		$createdAt = \DateTime::createFromFormat('U', $timestamp);
@@ -45,6 +51,9 @@ class WarehouseGoodFixture
 				->setName($name)
 				->setDescription($description)
 				->setCount($amount)
+				->setWidth($width)
+				->setHeight($height)
+				->setDepth($depth)
 				->setWeight($weight);
 
 		$goodManager->update($good);

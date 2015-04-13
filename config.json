@@ -19,12 +19,20 @@
                     "./bower_components/bootstrap/dist/js/bootstrap.min.js",
                     "./assets/scripts/app.js"
                 ],
-                "clients_client_list": [
-                    "./assets/scripts/clients_client_list.js"
+                "list_delete_popover": [
+                    "./assets/scripts/list-delete-popover.js"
                 ],
                 "clients_client_form": [
                     "./bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js",
-                    "./assets/scripts/clients_client_form.js"
+                    "./assets/scripts/clients-client-form.js"
+                ],
+                "finance_transaction_form": [
+                    "./bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js",
+                    "./assets/scripts/finance-transaction-form.js"
+                ],
+                "warehouse_good_form": [
+                    "./bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js",
+                    "./assets/scripts/warehouse-good-form.js"
                 ]
             },
             "img":   [

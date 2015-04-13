@@ -1,0 +1,6 @@
+finance.transaction:
+    label:
+        title: Заголовок
+        description: Описание
+        amount: Сумма (руб)
+        submit: Сохранить

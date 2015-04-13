@@ -1,0 +1,20 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Создан</th>
+                <th>Наименование</th>
+                <th>Кол-во</th>
+                <th>Размеры (ШхВхГ)</th>
+                <th>Вес</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for good in pagination %}
+                {% include 'CoreBundle:Warehouse/Good:list_item_content.html.twig' %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,16 @@
+{% extends 'CoreBundle:Finance:layout.html.twig' %}
+
+{% block title %}Новая транзакция / {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/finance-transaction-form.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h2 class="sub-header">Новая транзакция</h2>
+    <form class="form-horizontal form-bordered" action="{{ path('finance_transaction_create') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+        {{ form_widget(form) }}
+    </form>
+{% endblock %}

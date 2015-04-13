@@ -1,0 +1,16 @@
+<tr>
+    <td>{{ good.id }}</td>
+    <td>
+        <nobr>{{ good.createdAt|dtDateTime }}</nobr>
+    </td>
+    <td>{{ good.name }}</td>
+    <td>{{ good.count }}</td>
+    <td>
+        <nobr>{{ [good.width|number_format(0, '.', ' '), good.height|number_format(0, '.', ' '), good.depth|number_format(0, '.', ' ')]|join(' x ') }} мм</nobr>
+    </td>
+    <td><nobr>{{ good.weight|weight }}</nobr></td>
+    <td>
+        <a href="{{ path('warehouse_good_show', { 'good_id': good.id }) }}" class="btn btn-xs btn-default" title="Редактировать"><i class="fa fa-pencil"></i></a>
+        <button class="btn btn-xs btn-default delete-confirm-popover" title="Удалить" data-delete-url="{{ path('warehouse_good_delete', { 'good_id': good.id }) }}"><i class="fa fa-times"></i></button>
+    </td>
+</tr>

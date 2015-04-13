@@ -43,7 +43,6 @@ class MoneyExtension
         if ($isNegative) {
             $money = '&minus;' . $money;
         }
-        $money = '<nobr>' . $money . '</nobr>';
 
         return $money;
     }

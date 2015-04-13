@@ -1,0 +1,25 @@
+{% extends 'CoreBundle:Warehouse:layout.html.twig' %}
+
+{% block title %}Товары / {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/list-delete-popover.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h2 class="sub-header">Товары
+        <small>
+            <a class="btn btn-sm btn-default" href="{{ path('warehouse_good_new') }}">Добавить</a>
+        </small>
+    </h2>
+    {% if pagination.getTotalItemCount %}
+        {% include 'CoreBundle:Warehouse/Good:list_content.html.twig' %}
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    {% else %}
+        Нет товаров
+    {% endif %}
+{% endblock %}

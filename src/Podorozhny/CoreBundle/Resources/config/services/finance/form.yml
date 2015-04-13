@@ -1,0 +1,7 @@
+services:
+   podorozhny.form.type.finance_transaction:
+        class: Podorozhny\CoreBundle\Form\Type\Finance\TransactionType
+        arguments:
+            - @podorozhny.manager.finance_transaction
+        tags:
+            - { name: form.type, alias: finance_transaction }

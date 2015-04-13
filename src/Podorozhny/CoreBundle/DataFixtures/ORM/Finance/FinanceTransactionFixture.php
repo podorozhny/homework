@@ -15,15 +15,22 @@ class FinanceTransactionFixture
 		$timestamps = $this->getTimeStamps($count, -3500000, 0);
 
 		for ($i = 0; $i < $count; $i++) {
+			$amount =
+				$this->faker->boolean(80) ?
+					$this->faker->numberBetween(1, 500) * 100
+					: $this->faker->numberBetween(50, 500) * 1000;
+
+			if ($this->faker->boolean(50)) {
+				$amount = -$amount;
+			}
+
 			$this->createTransaction(
 				array_shift($timestamps),
 				$this->faker->realText($this->faker->numberBetween(10, 64)),
 				$this->faker->boolean(30) ? $this->faker->realText(
 					$this->faker->numberBetween(32, 4096)
 				) : null,
-				$this->faker->boolean(80) ?
-					$this->faker->numberBetween(1, 500) * 100
-					: $this->faker->numberBetween(50, 500) * 1000
+				$amount
 			);
 		}
 	}

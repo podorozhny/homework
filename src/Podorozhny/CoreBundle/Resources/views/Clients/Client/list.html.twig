@@ -4,12 +4,13 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('js/clients_client_list.js') }}"></script>
+    <script src="{{ asset('js/list-delete-popover.js') }}"></script>
 {% endblock %}
 
 {% block content %}
     {{ parent() }}
-    <h2 class="sub-header">Клиенты
+    <h2 class="sub-header">
+        Клиенты
         <small>
             <a class="btn btn-sm btn-default" href="{{ path('clients_client_new') }}">Добавить</a>
         </small>

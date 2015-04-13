@@ -24,7 +24,7 @@ class ClientType
 				'text',
 				[
 					'label'    => 'clients.client.label.name',
-					'required' => true,
+					'required' => false,
 					'attr'     => [
 						'tabindex' => 1,
 					],
@@ -35,7 +35,7 @@ class ClientType
 				'text',
 				[
 					'label'    => 'clients.client.label.phone',
-					'required' => true,
+					'required' => false,
 					'attr'     => [
 						'tabindex' => 2,
 					],
@@ -46,7 +46,7 @@ class ClientType
 				'text',
 				[
 					'label'    => 'clients.client.label.email',
-					'required' => true,
+					'required' => false,
 					'attr'     => [
 						'tabindex' => 3,
 					],
@@ -57,7 +57,7 @@ class ClientType
 				'textarea',
 				[
 					'label'    => 'clients.client.label.notes',
-					'required' => true,
+					'required' => false,
 					'attr'     => [
 						'tabindex' => 4,
 						'rows'     => 3,

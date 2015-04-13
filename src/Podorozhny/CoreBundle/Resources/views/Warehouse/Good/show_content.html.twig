@@ -1,0 +1,3 @@
+<form class="form-horizontal form-bordered" action="{{ path('warehouse_good_update', { 'good_id': good.id }) }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+    {{ form_widget(form) }}
+</form>

@@ -3,4 +3,6 @@ services:
         class: Podorozhny\CoreBundle\Controller\Warehouse\GoodController
         parent: podorozhny.controller.abstract
         arguments:
+            - @podorozhny.entity_manager
+            - @knp_paginator
             - @podorozhny.manager.warehouse_good

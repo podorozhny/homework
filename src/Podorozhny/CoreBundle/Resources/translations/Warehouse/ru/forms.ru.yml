@@ -1,0 +1,10 @@
+warehouse.good:
+    label:
+        name: Наименование
+        description: Описание
+        count: Количество
+        width: Ширина (мм)
+        height: Высота (мм)
+        depth: Глубина (мм)
+        weight: Вес (г)
+        submit: Сохранить

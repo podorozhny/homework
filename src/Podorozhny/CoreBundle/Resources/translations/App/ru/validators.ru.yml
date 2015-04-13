@@ -5,6 +5,9 @@ validation:
         min: 'Не менее {{ limit }} символов'
         max: 'Не более {{ limit }} символов'
         exact: 'Должно быть {{ limit }} символов в длину'
+    range:
+        min: 'Не менее {{ limit }}'
+        max: 'Не более {{ limit }}'
     datetime: '{{ value }} не является датой'
     date: '{{ value }} не является датой'
     time: '{{ value }} не является временем'
