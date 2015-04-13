@@ -4,16 +4,15 @@
             <tr>
                 <th>#</th>
                 <th>Дата</th>
-                <th>Наименование</th>
-                <th>Кол-во</th>
-                <th>Размеры (ШхВхГ)</th>
-                <th>Вес</th>
+                <th>Имя</th>
+                <th>Электропочта</th>
+                <th>Отдел</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            {% for good in pagination %}
-                {% include 'CoreBundle:Warehouse/Good:list_item_content.html.twig' %}
+            {% for user in pagination %}
+                {% include 'CoreBundle:Backend/User:list_item_content.html.twig' %}
             {% endfor %}
         </tbody>
     </table>

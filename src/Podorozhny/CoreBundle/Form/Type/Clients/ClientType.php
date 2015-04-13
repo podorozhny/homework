@@ -10,11 +10,11 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class ClientType
 	extends AbstractType
 {
-	private $categoryManager;
+	private $clientManager;
 
-	public function __construct(ClientManager $categoryManager)
+	public function __construct(ClientManager $clientManager)
 	{
-		$this->categoryManager = $categoryManager;
+		$this->clientManager = $clientManager;
 	}
 
 	public function buildForm(FormBuilderInterface $builder, array $options)
@@ -27,6 +27,7 @@ class ClientType
 				'required' => false,
 				'attr'     => [
 					'tabindex' => 1,
+					'autofocus' => true,
 				],
 			]
 		)

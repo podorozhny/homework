@@ -11,17 +11,16 @@ class BackendUserFixture
 	public function load(ObjectManager $manager)
 	{
 		$this->createUser(
-			$this->getTimeStamps(1, -3500000, -3400000),
+			$this->getTimeStamps(1, -4000000, -3500000),
 			'ivan@podorozhny.ru',
 			'12Ch0Ac948',
 			'Совет директоров',
-			'Иван Вадимович',
-			'Подорожный'
+			'Иван Вадимович Подорожный'
 		);
 
 		$count = $this->faker->numberBetween(40, 50);
 		
-		$timestamps = $this->getTimeStamps($count, -4000000, -3500000);
+		$timestamps = $this->getTimeStamps($count, -3500000, 0);
 		$emails     = [];
 
 		while (count($emails) < $count) {
@@ -36,6 +35,7 @@ class BackendUserFixture
 			$i = 0; $i < $count; $i++
 		) {
 			$groupNames = [
+				'Отдел кадров',
 				'Финансовый отдел',
 				'Складской отдел',
 				'Отдел по работе с клиентами',
@@ -46,8 +46,7 @@ class BackendUserFixture
 				array_shift($emails),
 				$this->faker->password,
 				$groupNames[array_rand($groupNames)],
-				$this->faker->firstName,
-				$this->faker->lastName
+				$this->faker->name
 			);
 		}
 	}
@@ -57,8 +56,7 @@ class BackendUserFixture
 		$email,
 		$password,
 		$groupName,
-		$firstname,
-		$lastname
+		$name
 	) {
 		$createdAt = \DateTime::createFromFormat('U', $timestamp);
 
@@ -68,13 +66,12 @@ class BackendUserFixture
 				->setCreatedAt($createdAt)
 				->setEmail($email)
 				->setPlainPassword($password)
-				->addGroup(
+				->setGroup(
 					$this->getReference(
 						'Podorozhny.Backend.Group.' . $groupName
 					)
 				)
-				->setFirstname($firstname)
-				->setLastname($lastname);
+				->setName($name);
 		$userManager->update($user);
 	}
 

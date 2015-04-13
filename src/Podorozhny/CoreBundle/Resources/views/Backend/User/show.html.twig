@@ -1,0 +1,14 @@
+{% extends 'CoreBundle:Backend/User:layout.html.twig' %}
+
+{% block title %}Сотрудник #{{ user.id }} / {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/backend-user-form.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h2 class="sub-header">Сотрудник #{{ user.id }}</h2>
+    {% include 'CoreBundle:Backend/User:show_content.html.twig' %}
+{% endblock %}

@@ -10,6 +10,7 @@ class BackendRoleFixture
 {
 	public function load(ObjectManager $manager)
 	{
+		$this->createRole('ROLE_PERSONNEL');
 		$this->createRole('ROLE_FINANCE');
 		$this->createRole('ROLE_WAREHOUSE');
 		$this->createRole('ROLE_CLIENTS');

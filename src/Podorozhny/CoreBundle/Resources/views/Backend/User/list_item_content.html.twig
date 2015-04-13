@@ -1,0 +1,15 @@
+<tr>
+    <td>{{ user.id }}</td>
+    <td>
+        <nobr>{{ user.createdAt|dtDateTime }}</nobr>
+    </td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.group.name }}</td>
+    <td>
+        {% if app.security.token.user.id != user.id and (not user.hasRole('ROLE_PERSONNEL') or app.security.token.user.group.name == 'Совет директоров') %}
+            <a href="{{ path('backend_user_show', { 'user_id': user.id }) }}" class="btn btn-xs btn-default" title="Редактировать"><i class="fa fa-pencil"></i></a>
+            <button class="btn btn-xs btn-default delete-confirm-popover" title="Уволить" data-delete-url="{{ path('backend_user_delete', { 'user_id': user.id }) }}"><i class="fa fa-times"></i></button>
+        {% endif %}
+    </td>
+</tr>

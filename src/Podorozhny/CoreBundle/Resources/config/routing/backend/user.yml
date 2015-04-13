@@ -1,0 +1,46 @@
+backend_user_list:
+    pattern: /users/{page}
+    defaults:
+        _controller: podorozhny.controller.backend_user:listAction
+        page: 1
+    requirements:
+        _method: GET
+        page: \d+
+
+backend_user_new:
+    pattern: /user/new
+    defaults:
+        _controller: podorozhny.controller.backend_user:newAction
+    requirements:
+        _method: GET
+
+backend_user_create:
+    pattern: /user/create
+    defaults:
+        _controller: podorozhny.controller.backend_user:createAction
+    requirements:
+        _method: POST
+
+backend_user_show:
+    pattern: /user/{user_id}
+    defaults:
+        _controller: podorozhny.controller.backend_user:showAction
+    requirements:
+        _method: GET
+        user_id: \d+
+
+backend_user_update:
+    pattern: /user/{user_id}/update
+    defaults:
+        _controller: podorozhny.controller.backend_user:updateAction
+    requirements:
+        _method: POST
+        user_id: \d+
+
+backend_user_delete:
+    pattern: /user/{user_id}/delete
+    defaults:
+        _controller: podorozhny.controller.backend_user:deleteAction
+    requirements:
+        _method: GET
+        user_id: \d+

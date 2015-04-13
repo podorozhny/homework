@@ -14,15 +14,19 @@
                 ]
             },
             "js":    {
-                "app":                 [
+                "app":                      [
                     "./bower_components/jquery/dist/jquery.min.js",
                     "./bower_components/bootstrap/dist/js/bootstrap.min.js",
                     "./assets/scripts/app.js"
                 ],
-                "list_delete_popover": [
+                "graph":                    [
+                    "./bower_components/Chart.js/Chart.min.js",
+                    "./assets/scripts/graph.js"
+                ],
+                "list_delete_popover":      [
                     "./assets/scripts/list-delete-popover.js"
                 ],
-                "clients_client_form": [
+                "clients_client_form":      [
                     "./bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js",
                     "./assets/scripts/clients-client-form.js"
                 ],
@@ -30,7 +34,7 @@
                     "./bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js",
                     "./assets/scripts/finance-transaction-form.js"
                 ],
-                "warehouse_good_form": [
+                "warehouse_good_form":      [
                     "./bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js",
                     "./assets/scripts/warehouse-good-form.js"
                 ]

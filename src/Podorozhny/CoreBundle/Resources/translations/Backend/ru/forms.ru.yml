@@ -3,3 +3,13 @@ backend.login:
         email: Электропочта
         password: Пароль
         submit: Войти
+
+backend.user:
+    label:
+        name: Имя
+        group: Отдел
+        email: Электропочта
+        plainPassword: Пароль
+        submit: Сохранить
+    empty:
+        group: -- Выберите отдел --

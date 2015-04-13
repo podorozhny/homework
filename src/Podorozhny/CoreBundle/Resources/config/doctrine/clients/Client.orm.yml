@@ -27,7 +27,7 @@ Podorozhny\Model\Clients\Client:
             nullable: true
         email:
             type: string
-            length: 100
+            length: 255
             nullable: true
         notes:
             type: string

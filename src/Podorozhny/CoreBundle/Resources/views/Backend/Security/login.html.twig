@@ -2,18 +2,12 @@
 
 {% block title %}Вход / {{ parent() }}{% endblock %}
 
+{% form_theme form 'CoreBundle:Form:layout_auth.html.twig' %}
+
 {% block content %}
     {{ parent() }}
-    <section class="site-section site-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <form class="form-horizontal form-bordered" action="{{ path('backend_security_check') }}" method="post" {{ form_enctype(form) }} id="form-feedback" novalidate="novalidate">
-                        <h3 class="form-title">Вход</h3>
-                        {{ form_widget(form) }}
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <form class="form-signin" action="{{ path('backend_security_check') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+        {#<h2 class="form-signin-heading">Необходима авторизация</h2>#}
+        {{ form_widget(form) }}
+    </form>
 {% endblock %}

@@ -1,6 +1,7 @@
 security:
+    always_authenticate_before_granting: true
     encoders:
-        Podorozhny\Model\Backend\UserInterface:
+        Podorozhny\Model\Backend\User:
             algorithm: sha512
             iterations: 500
             encode_as_base64: false
@@ -31,6 +32,9 @@ security:
             pattern: ^/(_(profiler|wdt)|bundles|css|fonts|img|js)/
             security: false
     access_control:
-        - { host: %podorozhny.domain_main%, path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-#        - { host: %podorozhny.domain_main%, path: ^/advert, role: [ROLE_USER] }
-#        - { host: %podorozhny.domain_main%, path: ^/my-adverts, role: [ROLE_USER] }
+        - { host: %podorozhny.domain_main%, path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { host: %podorozhny.domain_main%, path: ^/user, roles: ROLE_PERSONNEL }
+        - { host: %podorozhny.domain_main%, path: ^/finance, roles: ROLE_FINANCE }
+        - { host: %podorozhny.domain_main%, path: ^/warehouse, roles: ROLE_WAREHOUSE }
+        - { host: %podorozhny.domain_main%, path: ^/clients, roles: ROLE_CLIENTS }
+        - { host: %podorozhny.domain_main%, path: ^/, roles: [ROLE_PERSONNEL, ROLE_FINANCE, ROLE_WAREHOUSE, ROLE_CLIENTS] }

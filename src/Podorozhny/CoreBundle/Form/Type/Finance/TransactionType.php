@@ -10,11 +10,11 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class TransactionType
 	extends AbstractType
 {
-	private $categoryManager;
+	private $transactionManager;
 
-	public function __construct(TransactionManager $categoryManager)
+	public function __construct(TransactionManager $transactionManager)
 	{
-		$this->categoryManager = $categoryManager;
+		$this->transactionManager = $transactionManager;
 	}
 
 	public function buildForm(FormBuilderInterface $builder, array $options)
@@ -27,6 +27,7 @@ class TransactionType
 				'required' => true,
 				'attr'     => [
 					'tabindex' => 1,
+					'autofocus' => true,
 				],
 			]
 		)

@@ -13,7 +13,7 @@ Podorozhny\Model\Clients\Client:
                 exactMessage: validation.length.exact
         email:
             - Length:
-                max: 100
+                max: 255
                 maxMessage: validation.length.max
             - Email:
                 message: validation.email

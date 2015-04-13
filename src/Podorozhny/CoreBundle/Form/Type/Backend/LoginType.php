@@ -41,7 +41,7 @@ class LoginType
 					'label' => 'backend.login.label.submit',
 					'attr'  => [
 						'tabindex' => 3,
-						'class'    => 'btn-primary btn-block',
+						'class'    => 'btn-lg btn-primary btn-block',
 					],
 				]
 			);

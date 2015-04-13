@@ -1,0 +1,3 @@
+<form class="form-horizontal form-bordered" action="{{ path('backend_user_update', { 'user_id': user.id }) }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+    {{ form_widget(form) }}
+</form>

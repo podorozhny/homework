@@ -10,11 +10,11 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class GoodType
 	extends AbstractType
 {
-	private $categoryManager;
+	private $goodManager;
 
-	public function __construct(GoodManager $categoryManager)
+	public function __construct(GoodManager $goodManager)
 	{
-		$this->categoryManager = $categoryManager;
+		$this->goodManager = $goodManager;
 	}
 
 	public function buildForm(FormBuilderInterface $builder, array $options)
@@ -27,6 +27,7 @@ class GoodType
 				'required' => true,
 				'attr'     => [
 					'tabindex' => 1,
+					'autofocus' => true,
 				],
 			]
 		)

@@ -12,8 +12,9 @@ class BackendUserGroupFixture
 	{
 		$this->createGroup(
 			'Совет директоров',
-			['ROLE_FINANCE', 'ROLE_WAREHOUSE', 'ROLE_CLIENTS']
+			['ROLE_PERSONNEL', 'ROLE_FINANCE', 'ROLE_WAREHOUSE', 'ROLE_CLIENTS']
 		);
+		$this->createGroup('Отдел кадров', ['ROLE_PERSONNEL']);
 		$this->createGroup('Финансовый отдел', ['ROLE_FINANCE']);
 		$this->createGroup('Складской отдел', ['ROLE_WAREHOUSE']);
 		$this->createGroup('Отдел по работе с клиентами', ['ROLE_CLIENTS']);

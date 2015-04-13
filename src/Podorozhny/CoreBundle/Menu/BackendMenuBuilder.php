@@ -27,34 +27,15 @@ class BackendMenuBuilder
 		$menu = $this->factory->createItem('root');
 		$menu->setChildrenAttribute('class', 'nav navbar-nav navbar-right');
 
-//		$menu->addChild(
-//			'<i class="fa fa-times"></i>',
-//			['uri' => 'javascript:void(0)']
-//		)
-//			->setAttribute('class', 'visible-xs visible-sm')
-//			->setLinkAttribute('class', 'site-menu-toggle text-center');
-//
-//		$menu->addChild('Помощь', ['route' => 'support_page_help']);
-//
-//		$menu->addChild('Обратная связь', ['route' => 'support_feedback_new']);
-
 		$menu->addChild(
 			'user',
-//				[
-//					'label' => $this->securityContext->getToken()
-//						->getUser()
-//						->getEmail()
-//				]
 			[
-				'label' => 'Прокопенко Станислав Михайлович'
+				'label' => $this->securityContext->getToken()
+					->getUser()
+					->getName()
 			]
 		)
 			->setAttribute('dropdown', true);
-
-//			$menu['user']->addChild(
-//				'Мои объявления',
-//				['route' => 'backend_profile_adverts']
-//			);
 
 		$menu['user']->addChild(
 			'Выход',
@@ -75,37 +56,53 @@ class BackendMenuBuilder
 			['route' => 'backend_home']
 		);
 
-		$menu->addChild(
-			'Отчеты',
-			['uri' => 'javascript:void(0)']
-		);
+		if ($this->securityContext->isGranted('ROLE_PERSONNEL')
+		) {
+			$menu->addChild(
+				'Отдел кадров',
+				[
+					'route'      => 'backend_user_list',
+					'attributes' => ['divider_prepend' => true]
+				]
+			)
+				->setCurrent($this->isCurrent(['backend_user_']));
+		}
 
-		$menu->addChild(
-			'Клиентский отдел',
-			[
-				'route'      => 'clients_client_list',
-				'attributes' => ['divider_prepend' => true]
-			]
-		)
-			->setCurrent($this->isCurrent(['clients_client_']));
+		if ($this->securityContext->isGranted('ROLE_CLIENTS')
+		) {
+			$menu->addChild(
+				'Клиентский отдел',
+				[
+					'route'      => 'clients_client_list',
+					'attributes' => ['divider_prepend' => true]
+				]
+			)
+				->setCurrent($this->isCurrent(['clients_client_']));
+		}
 
-		$menu->addChild(
-			'Финансовый отдел',
-			[
-				'route'      => 'finance_transaction_list',
-				'attributes' => ['divider_prepend' => true]
-			]
-		)
-			->setCurrent($this->isCurrent(['finance_transaction_']));
+		if ($this->securityContext->isGranted('ROLE_FINANCE')
+		) {
+			$menu->addChild(
+				'Финансовый отдел',
+				[
+					'route'      => 'finance_transaction_list',
+					'attributes' => ['divider_prepend' => true]
+				]
+			)
+				->setCurrent($this->isCurrent(['finance_transaction_']));
+		}
 
-		$menu->addChild(
-			'Складской отдел',
-			[
-				'route'      => 'warehouse_good_list',
-				'attributes' => ['divider_prepend' => true]
-			]
-		)
-			->setCurrent($this->isCurrent(['warehouse_good_']));
+		if ($this->securityContext->isGranted('ROLE_WAREHOUSE')
+		) {
+			$menu->addChild(
+				'Складской отдел',
+				[
+					'route'      => 'warehouse_good_list',
+					'attributes' => ['divider_prepend' => true]
+				]
+			)
+				->setCurrent($this->isCurrent(['warehouse_good_']));
+		}
 
 		return $menu;
 	}

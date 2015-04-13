@@ -2,6 +2,7 @@
 
 namespace Podorozhny\CoreBundle\Controller\Backend;
 
+use Podorozhny\Model\Backend\UserInterface;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Security\Core\Security;
 use Podorozhny\CoreBundle\Controller\AbstractController;
@@ -20,7 +21,7 @@ class SecurityController
 	public function loginAction()
 	{
 		if (true === $this->getSecurityContext()
-				->isGranted('ROLE_USER')
+				->isGranted(UserInterface::ROLE_DEFAULT)
 		) {
 			return $this->redirectToRoute('backend_home');
 		}

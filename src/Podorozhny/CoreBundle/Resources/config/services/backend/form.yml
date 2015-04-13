@@ -1,5 +1,12 @@
 services:
-   podorozhny.form.type.backend_login:
+    podorozhny.form.type.backend_login:
         class: Podorozhny\CoreBundle\Form\Type\Backend\LoginType
         tags:
             - { name: form.type, alias: backend_login }
+
+    podorozhny.form.type.backend_user:
+        class: Podorozhny\CoreBundle\Form\Type\Backend\UserType
+        arguments:
+            - @podorozhny.manager.backend_user
+        tags:
+            - { name: form.type, alias: backend_user }

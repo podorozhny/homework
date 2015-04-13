@@ -4,11 +4,15 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="//getbootstrap.com/assets/js/vendor/holder.js"></script>
+    <script src="{{ asset('js/graph.js') }}"></script>
 {% endblock %}
 
 {% block content %}
     {{ parent() }}
-    <h1 class="page-header">Главная</h1>
-    data-highcharts-chart
+    <h1 class="page-header">Добро пожаловать</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
 {% endblock %}

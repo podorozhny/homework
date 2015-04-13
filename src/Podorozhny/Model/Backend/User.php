@@ -2,8 +2,6 @@
 
 namespace Podorozhny\Model\Backend;
 
-use Doctrine\Common\Collections\ArrayCollection;
-
 class User
 	implements UserInterface
 {
@@ -15,27 +13,20 @@ class User
 	protected $password;
 	protected $plainPassword;
 	protected $salt;
-	protected $enabled;
-	protected $locked;
-	protected $groups;
+	protected $group;
 	protected $roles; // TODO deprecated
-	protected $firstname;
-	protected $lastname;
+	protected $name;
 
 	public function __construct()
 	{
 		$this->createdAt = new \DateTime();
 		$this->salt      =
 			md5(base_convert(sha1(uniqid(mt_rand(), true)), 16, 36));
-		$this->enabled   = false;
-		$this->locked    = false;
-		$this->groups    = new ArrayCollection();
-		$this->roles     = new ArrayCollection();
 	}
 
 	public function __toString()
 	{
-		return implode(' ', [$this->getLastname(), $this->getFirstname()]);
+		return $this->getName();
 	}
 
 	public function getId()
@@ -123,109 +114,37 @@ class User
 		return $this->salt;
 	}
 
-	public function setEnabled($enabled)
+	public function setName($name)
 	{
-		$this->enabled = (boolean) $enabled;
+		$this->name = $name;
 
 		return $this;
 	}
 
-	public function isEnabled()
+	public function getName()
 	{
-		return $this->enabled;
+		return $this->name;
 	}
 
-	public function setLocked($locked)
+	public function setGroup(UserGroupInterface $group)
 	{
-		$this->locked = (boolean) $locked;
+		$this->group = $group;
 
 		return $this;
 	}
 
-	public function isLocked()
+	public function getGroup()
 	{
-		return !$this->isAccountNonLocked();
-	}
-
-	public function setFirstname($firstname)
-	{
-		$this->firstname = $firstname;
-
-		return $this;
-	}
-
-	public function getFirstname()
-	{
-		return $this->firstname;
-	}
-
-	public function setLastname($lastname)
-	{
-		$this->lastname = $lastname;
-
-		return $this;
-	}
-
-	public function getLastname()
-	{
-		return $this->lastname;
-	}
-
-	public function getGroups()
-	{
-		return $this->groups;
-	}
-
-	public function getGroupNames()
-	{
-		$names = [];
-		foreach ($this->getGroups() as $group) {
-			$names[] = $group->getName();
-		}
-
-		return $names;
-	}
-
-	public function hasGroup($name)
-	{
-		return in_array($name, $this->getGroupNames());
-	}
-
-	public function addGroup(UserGroupInterface $group)
-	{
-		if (!$this->getGroups()
-			->contains($group)
-		) {
-			$this->getGroups()
-				->add($group);
-		}
-
-		return $this;
-	}
-
-	public function removeGroup(UserGroupInterface $group)
-	{
-		if ($this->getGroups()
-			->contains($group)
-		) {
-			$this->getGroups()
-				->removeElement($group);
-		}
-
-		return $this;
+		return $this->group;
 	}
 
 	public function getRoles()
 	{
-		$roles = [];
-		foreach ($this->getGroups() as $group) {
-			$roles = array_merge($roles, $group->getRoleNames());
-		}
-		if (count($roles) < 1) {
-			$roles[] = static::ROLE_DEFAULT;
-		}
-
-		return array_unique($roles);
+		return array_merge(
+			[self::ROLE_DEFAULT],
+			$this->getGroup()
+				->getRoleNames()
+		);
 	}
 
 	public function hasRole($role)
@@ -238,14 +157,20 @@ class User
 		return null !== $user && $this->getId() === $user->getId();
 	}
 
+	/**
+	 * @deprecated
+	 */
 	public function setSuperAdmin($boolean)
 	{
 		return $this;
 	}
 
+	/**
+	 * @deprecated
+	 */
 	public function isSuperAdmin()
 	{
-		return $this->hasRole(static::ROLE_SUPER_ADMIN);
+		return false;
 	}
 
 	public function serialize()
@@ -257,8 +182,6 @@ class User
 				$this->email,
 				$this->password,
 				$this->salt,
-				$this->enabled,
-				$this->locked,
 			]
 		);
 	}
@@ -267,7 +190,7 @@ class User
 	{
 		$data = unserialize($serialized);
 		list($this->id, $this->createdAt, $this->email, $this->password,
-			$this->salt, $this->enabled, $this->locked,) = $data;
+			$this->salt) = $data;
 	}
 
 	public function eraseCredentials()
@@ -282,7 +205,7 @@ class User
 
 	public function isAccountNonLocked()
 	{
-		return !$this->locked;
+		return true;
 	}
 
 	public function isCredentialsNonExpired()
@@ -292,6 +215,11 @@ class User
 
 	public function isCredentialsExpired()
 	{
-		return !$this->isCredentialsNonExpired();
+		return false;
+	}
+
+	public function isEnabled()
+	{
+		return true;
 	}
 }

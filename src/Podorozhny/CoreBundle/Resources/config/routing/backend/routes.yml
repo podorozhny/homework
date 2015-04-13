@@ -11,3 +11,6 @@ backend_security:
 
 backend_page:
     resource: @CoreBundle/Resources/config/routing/backend/page.yml
+
+backend_user:
+    resource: @CoreBundle/Resources/config/routing/backend/user.yml

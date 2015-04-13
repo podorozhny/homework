@@ -67,6 +67,14 @@ gulp.task('js-app', function () {
         .pipe(gulp.dest(config.build.dest.js));
 });
 
+gulp.task('js-graph', function () {
+    return gulp.src(config.build.src.js.graph)
+        .pipe(uglify())
+        .pipe(wrapper({header: '\n// ${filename}\n\n'}))
+        .pipe(concat('graph.js'))
+        .pipe(gulp.dest(config.build.dest.js));
+});
+
 gulp.task('js-list-delete-popover', function () {
     return gulp.src(config.build.src.js.list_delete_popover)
         .pipe(uglify())
@@ -99,7 +107,7 @@ gulp.task('js-warehouse-good-form', function () {
         .pipe(gulp.dest(config.build.dest.js));
 });
 
-gulp.task('js', ['js-app', 'js-list-delete-popover', 'js-clients-client-form', 'js-finance-transaction-form', 'js-warehouse-good-form']);
+gulp.task('js', ['js-app', 'js-graph', 'js-list-delete-popover', 'js-clients-client-form', 'js-finance-transaction-form', 'js-warehouse-good-form']);
 
 gulp.task('images', function () {
     return gulp.src(config.build.src.img)
@@ -113,7 +121,7 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest(config.build.dest.fonts));
 });
 
-gulp.task('build', ['clean', 'images', 'fonts'], function () {
+gulp.task('build', ['images', 'fonts'], function () {
     gulp.start(['css', 'js']);
 });
 

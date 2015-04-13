@@ -2,20 +2,10 @@ Podorozhny\Model\Backend\User:
     type: entity
     table: backend_users
     repositoryClass: Podorozhny\Doctrine\Repository\Backend\UserRepository
-    manyToMany:
-        groups:
+    manyToOne:
+        group:
             targetEntity: Podorozhny\Model\Backend\UserGroup
             inversedBy: users
-            joinTable:
-                name: backend_user_usergroup_relations
-                joinColumns:
-                    user_id:
-                        referencedColumnName: id
-                inverseJoinColumns:
-                    group_id:
-                        referencedColumnName: id
-            orderBy:
-                name: ASC
     id:
         id:
             type: integer
@@ -42,9 +32,6 @@ Podorozhny\Model\Backend\User:
         salt:
             type: string
             length: 32
-        firstname:
-            type: string
-            length: 100
-        lastname:
+        name:
             type: string
             length: 100
