@@ -1,4 +1,8 @@
 Podorozhny\Model\Clients\Client:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [phone, email]
+            message: validation.unique
     properties:
         name:
             - Length:

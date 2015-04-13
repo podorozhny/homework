@@ -30,7 +30,7 @@ class BackendMenuBuilder
 		$menu->addChild(
 			'user',
 			[
-				'label' => $this->securityContext->getToken()
+				'label' => '<i class="fa fa-fw fa-user"></i> ' . $this->securityContext->getToken()
 					->getUser()
 					->getName()
 			]

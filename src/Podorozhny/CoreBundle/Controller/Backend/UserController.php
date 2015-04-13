@@ -88,6 +88,18 @@ class UserController
 			);
 		}
 
+		if ($this->getUser()
+				->getId() == $user->getId()
+			|| ($user->hasRole('ROLE_PERSONNEL')
+				&& $this->getUser()
+					->getGroup()
+					->getName() != 'Совет директоров')
+			|| ($user->getGroup()
+					->getName() == 'Совет директоров')
+		) {
+			throw $this->createAccessDeniedException();
+		}
+
 		$form = $this->createForm('backend_user');
 		$form->setData($user);
 
@@ -111,6 +123,18 @@ class UserController
 					$user_id
 				)
 			);
+		}
+
+		if ($this->getUser()
+				->getId() == $user->getId()
+			|| ($user->hasRole('ROLE_PERSONNEL')
+				&& $this->getUser()
+					->getGroup()
+					->getName() != 'Совет директоров')
+			|| ($user->getGroup()
+					->getName() == 'Совет директоров')
+		) {
+			throw $this->createAccessDeniedException();
 		}
 
 		$form = $this->createForm('backend_user');

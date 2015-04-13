@@ -7,7 +7,28 @@
 {% block content %}
     {{ parent() }}
     <form class="form-signin" action="{{ path('backend_security_check') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
-        {#<h2 class="form-signin-heading">Необходима авторизация</h2>#}
+        <h2 class="form-signin-heading">{% autoescape false %}{{ podorozhny_company_name }}{% endautoescape %}</h2>
+        <div class="alert alert-info">
+            <b>Демо-доступ:</b><br />
+            Электропочта: miller@homework.podorozhny.ru<br />
+            Пароль: doshiraklapshichka
+        </div>
         {{ form_widget(form) }}
     </form>
+    {#<div class="form-group">#}
+    {#<input type="email" name="_username" value="{{ last_username }}" placeholder="E-mail" class="form-control" tabindex="1" autofocus="autofocus" />#}
+    {#</div>#}
+    {#<div class="form-group">#}
+    {#<input type="password" name="_password" placeholder="Password" class="form-control" tabindex="2" />#}
+    {#</div>#}
+    {#<div class="form-group">#}
+    {#<label>#}
+    {#<input type="checkbox" name="_remember_me" checked="checked" value="on" tabindex="3" />#}
+    {#Remember me#}
+    {#</label>#}
+    {#</div>#}
+    {#<div class="form-group form-actions">#}
+    {#<button class="btn btn-lg btn-primary btn-block" name="_submit" type="submit" tabindex="4">Login</button>#}
+    {#</div>#}
+    {#<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />#}
 {% endblock %}

@@ -21,9 +21,24 @@ var barChartData = {
 };
 
 $(document).ready(function () {
-    var ctx = $('#canvas').get(0).getContext('2d');
+    var clientsCtx = $('#canvas-clients').get(0).getContext('2d'),
+        transactionsCtx = $('#canvas-transactions').get(0).getContext('2d'),
+        goodsCtx = $('#canvas-goods').get(0).getContext('2d'),
+        usersCtx = $('#canvas-users').get(0).getContext('2d');
 
-    window.myBar = new Chart(ctx).Bar(barChartData, {
+    window.myBar = new Chart(clientsCtx).Bar(barChartData, {
+        responsive: true
+    });
+
+    window.myBar = new Chart(transactionsCtx).Bar(barChartData, {
+        responsive: true
+    });
+
+    window.myBar = new Chart(goodsCtx).Bar(barChartData, {
+        responsive: true
+    });
+
+    window.myBar = new Chart(usersCtx).Bar(barChartData, {
         responsive: true
     });
 });

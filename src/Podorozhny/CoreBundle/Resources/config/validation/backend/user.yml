@@ -1,4 +1,8 @@
 Podorozhny\Model\Backend\User:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: email
+            message: validation.unique
     properties:
         name:
             - NotBlank:

@@ -20,6 +20,7 @@ class LoginType
 				'attr'     => [
 					'tabindex'  => 1,
 					'autofocus' => true,
+					'placeholder' => 'backend.login.label.email',
 				],
 			]
 		)
@@ -31,6 +32,7 @@ class LoginType
 					'required' => true,
 					'attr'     => [
 						'tabindex' => 2,
+						'placeholder' => 'backend.login.label.password',
 					],
 				]
 			)

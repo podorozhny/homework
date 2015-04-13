@@ -95,7 +95,7 @@ class Client
 			list($code, $block1, $block2, $block3) =
 				sscanf($phone, "+7 (%d) %d-%d-%d");
 			$phone = $code . $block1 . $block2 . $block3;
-			$this->setPhone($phone);
+			$this->setPhone(!empty($phone) ? $phone : null);
 		}
 	}
 }

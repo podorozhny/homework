@@ -25,10 +25,12 @@ Podorozhny\Model\Clients\Client:
             type: string
             length: 10
             nullable: true
+            unique: true
         email:
             type: string
             length: 255
             nullable: true
+            unique: true
         notes:
             type: string
             length: 5000

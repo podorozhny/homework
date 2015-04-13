@@ -11,7 +11,15 @@ class BackendUserFixture
 	public function load(ObjectManager $manager)
 	{
 		$this->createUser(
-			$this->getTimeStamps(1, -4000000, -3500000),
+			$this->getTimeStamps(1, -4000000, -3750000),
+			'miller@homework.podorozhny.ru',
+			'doshiraklapshichka',
+			'Совет директоров',
+			'Миллер Алексей Борисович'
+		);
+
+		$this->createUser(
+			$this->getTimeStamps(1, -3750000, -3500000),
 			'ivan@podorozhny.ru',
 			'12Ch0Ac948',
 			'Совет директоров',

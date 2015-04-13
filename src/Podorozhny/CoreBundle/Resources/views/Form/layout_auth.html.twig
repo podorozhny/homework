@@ -1,1 +1,18 @@
-{% extends 'CoreBundle:Form:layout.html.twig' %}
+{% extends 'CoreBundle:Form:layout_horizontal.html.twig' %}
+
+{% block form_row -%}
+    {% spaceless %}
+        <div class="form-group{% if (not compound or force_error|default(false)) and not valid %} has-error{% endif %}">
+            {{ form_widget(form) }}
+            {{ form_errors(form) }}
+        </div>
+    {% endspaceless %}
+{%- endblock form_row %}
+
+{% block submit_row -%}
+    {% spaceless %}
+        <div class="form-group form-actions">
+            {{ form_widget(form) }}
+        </div>
+    {% endspaceless %}
+{% endblock submit_row %}
