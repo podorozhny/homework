@@ -15,9 +15,9 @@ class GoodController
 		PaginatorInterface $paginator,
 		GoodManager $goodManager
 	) {
-		$this->entityManager      = $entityManager;
-		$this->paginator          = $paginator;
-		$this->goodManager = $goodManager;
+		$this->entityManager = $entityManager;
+		$this->paginator     = $paginator;
+		$this->goodManager   = $goodManager;
 	}
 	
 	public function listAction($page)
@@ -95,7 +95,7 @@ class GoodController
 			'CoreBundle:Warehouse/Good:show.html.twig',
 			[
 				'good' => $good,
-				'form'        => $form->createView(),
+				'form' => $form->createView(),
 			]
 		);
 	}
@@ -132,7 +132,7 @@ class GoodController
 			'CoreBundle:Warehouse/Good:show.html.twig',
 			[
 				'good' => $good,
-				'form'        => $form->createView(),
+				'form' => $form->createView(),
 			]
 		);
 	}

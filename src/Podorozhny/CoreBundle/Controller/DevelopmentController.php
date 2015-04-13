@@ -12,7 +12,8 @@ class DevelopmentController
 	{
 		$phone = '+7 (495) 500-77-35';
 
-		list($code, $block1, $block2, $block3) = sscanf($phone, "+7 (%d) %d-%d-%d");
+		list($code, $block1, $block2, $block3) =
+			sscanf($phone, "+7 (%d) %d-%d-%d");
 
 		$phone = $code . $block1 . $block2 . $block3;
 

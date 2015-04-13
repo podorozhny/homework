@@ -20,16 +20,16 @@ class ClientType
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
 		$builder->add(
-				'name',
-				'text',
-				[
-					'label'    => 'clients.client.label.name',
-					'required' => false,
-					'attr'     => [
-						'tabindex' => 1,
-					],
-				]
-			)
+			'name',
+			'text',
+			[
+				'label'    => 'clients.client.label.name',
+				'required' => false,
+				'attr'     => [
+					'tabindex' => 1,
+				],
+			]
+		)
 			->add(
 				'phone',
 				'text',

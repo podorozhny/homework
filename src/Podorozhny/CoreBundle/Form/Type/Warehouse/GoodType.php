@@ -20,16 +20,16 @@ class GoodType
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
 		$builder->add(
-				'name',
-				'text',
-				[
-					'label'    => 'warehouse.good.label.name',
-					'required' => true,
-					'attr'     => [
-						'tabindex' => 1,
-					],
-				]
-			)
+			'name',
+			'text',
+			[
+				'label'    => 'warehouse.good.label.name',
+				'required' => true,
+				'attr'     => [
+					'tabindex' => 1,
+				],
+			]
+		)
 			->add(
 				'description',
 				'textarea',

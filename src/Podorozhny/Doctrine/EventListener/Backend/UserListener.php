@@ -8,9 +8,9 @@ use Podorozhny\Model\Backend\UserInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class UserListener
-    implements EventSubscriber
+	implements EventSubscriber
 {
-    protected $container;
+	protected $container;
 
 	public function __construct(ContainerInterface $container)
 	{

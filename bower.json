@@ -9,6 +9,7 @@
         "bootstrap":        "3.3.4",
         "font-awesome":     "4.3.0",
         "jquery":           "1.11.2",
-        "jquery.inputmask": "3.1.62"
+        "jquery.inputmask": "3.1.62",
+        "highcharts":       "4.0.3"
     }
 }

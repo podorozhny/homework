@@ -4,5 +4,5 @@ namespace Podorozhny\Util;
 
 interface CanonicalizerInterface
 {
-    public function canonicalize($string);
+	public function canonicalize($string);
 }

@@ -20,16 +20,16 @@ class TransactionType
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
 		$builder->add(
-				'title',
-				'text',
-				[
-					'label'    => 'finance.transaction.label.title',
-					'required' => true,
-					'attr'     => [
-						'tabindex' => 1,
-					],
-				]
-			)
+			'title',
+			'text',
+			[
+				'label'    => 'finance.transaction.label.title',
+				'required' => true,
+				'attr'     => [
+					'tabindex' => 1,
+				],
+			]
+		)
 			->add(
 				'description',
 				'textarea',

@@ -3,16 +3,16 @@
 namespace Podorozhny\Util;
 
 class Canonicalizer
-    implements CanonicalizerInterface
+	implements CanonicalizerInterface
 {
-    public function canonicalize($string)
-    {
-        return null === $string
-            ? null
-            : mb_convert_case(
-                $string,
-                MB_CASE_LOWER,
-                mb_detect_encoding($string)
-            );
-    }
+	public function canonicalize($string)
+	{
+		return null === $string
+			? null
+			: mb_convert_case(
+				$string,
+				MB_CASE_LOWER,
+				mb_detect_encoding($string)
+			);
+	}
 }

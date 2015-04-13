@@ -6,13 +6,13 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration
-    implements ConfigurationInterface
+	implements ConfigurationInterface
 {
-    public function getConfigTreeBuilder()
-    {
-        $treeBuilder = new TreeBuilder();
-        $rootNode    = $treeBuilder->root('podorozhny');
+	public function getConfigTreeBuilder()
+	{
+		$treeBuilder = new TreeBuilder();
+		$rootNode    = $treeBuilder->root('podorozhny');
 
-        return $treeBuilder;
-    }
+		return $treeBuilder;
+	}
 }

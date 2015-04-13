@@ -3,19 +3,19 @@
 namespace Podorozhny\Twig\Extension;
 
 class SizeExtension
-    extends \Twig_Extension
+	extends \Twig_Extension
 {
-    public function getFilters()
-    {
-        return [
+	public function getFilters()
+	{
+		return [
 			'sizeFilter' => new \Twig_SimpleFilter(
 				'size', [$this, 'sizeFilter'], ['is_safe' => ['html']]
 			),
-        ];
-    }
+		];
+	}
 
-    public function sizeFilter($size)
-    {
+	public function sizeFilter($size)
+	{
 		if ($size < 1000) {
 			return $size . ' мм';
 		}
@@ -31,10 +31,10 @@ class SizeExtension
 		}
 
 		return $size . ' м';
-    }
+	}
 
-    public function getName()
-    {
-        return 'size_extension';
-    }
+	public function getName()
+	{
+		return 'size_extension';
+	}
 }
