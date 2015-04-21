@@ -91,7 +91,7 @@ class Client
 	{
 		$phone = $this->getPhone();
 		
-		if ($phone) {
+		if (mb_strlen($phone) == 18) {
 			list($code, $block1, $block2, $block3) =
 				sscanf($phone, "+7 (%d) %d-%d-%d");
 			$phone = $code . $block1 . $block2 . $block3;
